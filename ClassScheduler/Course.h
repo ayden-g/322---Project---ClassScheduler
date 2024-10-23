@@ -3,9 +3,11 @@
 
 #include <string>
 #include <map>
+
 using namespace std;
 
-class Course {
+class Course 
+{
 private:
     string courseName;
     int seatsAvailable;
@@ -15,11 +17,10 @@ private:
 
 public:
     Course(int id, string name, int seats, string time, string date);
-
     Course();
 
     static void createCourse(map<int, Course>& catalogedCourses);
-
+    static bool isTimeSlotAvailable(const map<int, Course>& catalogedCourses, const string& time, const string& date);
     void displayCourse() const;
 };
 
