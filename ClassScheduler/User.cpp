@@ -21,10 +21,11 @@ using namespace std;
         cin >> uniID;
 
         if (registeredUsers.find(uniID) != registeredUsers.end()) {
-            cout << "You are a " << userTypeToString(registeredUsers[uniID].registeredAccess) << endl;
+            cout << "You are a " << "Instructor" << endl;
             cout << "Enter a new password: ";
             cin >> newPassword;
             registeredUsers[uniID].registeredPassword = newPassword;
+            registeredUsers[uniID].registeredUsername = uniID;
             cout << "User registered successfully" << endl;
             return registeredUsers;
         }

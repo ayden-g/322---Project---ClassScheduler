@@ -6,14 +6,14 @@
 
 using namespace std;
 enum userType {STUDENT, PROFFESOR, ADMIN};
-std::string userTypeToString(userType type) {
-    switch (type) {
-        case STUDENT: return "Student";
-        case PROFFESOR: return "Proffesor";
-        case ADMIN: return "Admin";
-        default: return "Unknown";
-    }
-}
+// string userTypeToString(userType type) {
+//     switch (type) {
+//         case STUDENT: return "Student";
+//         case PROFFESOR: return "Proffesor";
+//         case ADMIN: return "Admin";
+//         default: return "Unknown";
+//     }
+// }
 
 
 class User {
