@@ -11,12 +11,14 @@ int main() {
     string username;
     string password;
 
-    map<string, string> unregisteredUsers = {{"Test",""}};
+    User user("","",student);
+    
+    map<string, User> unregisteredUsers = {{"Test",user}};
     map<int, Course> catalogedCourses;
 
     cout << "Register new user: " << endl;
 
-    map<string, string> registeredUsers = User::registerUser(unregisteredUsers);
+    map<string, User> registeredUsers = User::registerUser(unregisteredUsers);
 
     cout << "Now log in: " << endl;
 
