@@ -6,14 +6,7 @@
 
 using namespace std;
 enum userType {STUDENT, PROFFESOR, ADMIN};
-// string userTypeToString(userType type) {
-//     switch (type) {
-//         case STUDENT: return "Student";
-//         case PROFFESOR: return "Proffesor";
-//         case ADMIN: return "Admin";
-//         default: return "Unknown";
-//     }
-// }
+
 
 
 class User {
@@ -21,6 +14,8 @@ private:
     string registeredUsername;
     string registeredPassword;
     userType registeredAccess; 
+
+
 
     
 public:
@@ -30,6 +25,9 @@ public:
     static map<string, User> registerUser(map<string, User> registeredUsers);
 
     bool validateLogin(const string& username, const string& password) const;
+
+    static string userTypeToString(const userType type);
+
 };
 
 #endif

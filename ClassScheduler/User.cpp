@@ -21,7 +21,7 @@ using namespace std;
         cin >> uniID;
 
         if (registeredUsers.find(uniID) != registeredUsers.end()) {
-            cout << "You are a " << "Instructor" << endl;
+            cout << "You are a " << userTypeToString(registeredUsers[uniID].registeredAccess) << endl;
             cout << "Enter a new password: ";
             cin >> newPassword;
             registeredUsers[uniID].registeredPassword = newPassword;
@@ -41,5 +41,14 @@ using namespace std;
         }
         return false;
     }
+
+    string User::userTypeToString(const userType type) {
+    switch (type) {
+        case STUDENT: return "Student";
+        case PROFFESOR: return "Proffesor";
+        case ADMIN: return "Admin";
+        default: return "Unknown";
+    }
+}
 
 
