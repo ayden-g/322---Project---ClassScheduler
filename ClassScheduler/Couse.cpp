@@ -73,6 +73,73 @@ void Course::createCourse(map<int, Course>& catalogedCourses)
     cout << "Course created successfully!" << endl;
 }
 
+bool Course::editCourse(map<int, Course>& catalogedCourses, int courseID)
+{
+    // Check if the course ID exists in the catalog
+    auto it = catalogedCourses.find(courseID);
+    if(it == catalogedCourses.end())
+    {
+        cout << "Course with ID " << courseID << " does not exist." << endl;
+        return false;
+    }
+
+    Course& courseToEdit = it->second;
+    string name, time, date;
+    int seats;
+
+    // Display current course information
+    cout << "Editing Course: " << endl;
+    courseToEdit.displayCourse();
+
+    // Input updated course information
+    cout << "Enter new course name (leave blank to keep current): ";
+    cin.ignore();
+    getline(cin, name);
+    if(name.empty())
+    {
+        name = courseToEdit.courseName;
+    }
+
+    cout << "Enter new seats available (negative to keep current): ";
+    cin >> seats;
+    if(seats < 0) 
+    {
+        seats = courseToEdit.seatsAvailable;
+    }
+
+    cout << "Enter new course time (e.g., 10:00 AM, leave blank to keep current): ";
+    cin.ignore();
+    getline(cin, time);
+    if(time.empty())
+    {
+        time = courseToEdit.courseTime;
+    }
+
+    cout << "Enter new course data (e.g., 2024-10-22, leave blank to keep current): ";
+    getline(cin, date);
+    if(date.empty())
+    {
+        date = courseToEdit.courseDate;
+    }
+
+    // Validate time slot
+    if(isTimeSlotAvailable(catalogedCourses, time, date))
+    {
+        courseToEdit.courseName = name;
+        courseToEdit.courseTime = time;
+        courseToEdit.courseDate = date;
+        courseToEdit.seatsAvailable = seats;
+
+        cout << "Course updated successfully!" << endl;
+        return true;
+    }   
+    else
+    {
+        cout << "Time slot is not available. Edit canceled." << endl;
+        return false;
+    }
+}
+
 // Method to display course details
 void Course::displayCourse() const 
 {
