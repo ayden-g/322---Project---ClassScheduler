@@ -20,6 +20,7 @@ public:
     Course();
 
     static void createCourse(map<int, Course>& catalogedCourses);
+    static bool editCourse(map<int, Course>& catalogedCourses, int courseID);
     static bool isTimeSlotAvailable(const map<int, Course>& catalogedCourses, const string& time, const string& date);
     void displayCourse() const;
 };
