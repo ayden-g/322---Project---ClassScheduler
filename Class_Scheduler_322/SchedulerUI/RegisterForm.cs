@@ -35,6 +35,13 @@ namespace SchedulerUI
                 return;
             }
 
+            if(userType != "Faculty" && userType != "Student" && userType != "Admin")
+            {
+                MessageBox.Show("User Type was not (Student/Faculty/Admin),", "Input Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                txtUserType.Text = String.Empty;
+                return;
+            }
+
             if (txtPassword.Text != txtPasswordVerify.Text)
             {
                 MessageBox.Show("Passwords do not match,", "Input Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
