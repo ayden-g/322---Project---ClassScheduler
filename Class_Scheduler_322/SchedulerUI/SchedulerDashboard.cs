@@ -48,7 +48,7 @@ namespace StudentDash
         private string getUserType()
         {
             string userType = string.Empty;
-            string query = "SELECT user_type FROM users WHERE email_address = @Email";
+            string query = "SELECT user_type FROM users WHERE email_adress = @Email";
         
             try
             {
