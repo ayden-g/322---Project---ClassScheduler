@@ -48,6 +48,22 @@ namespace Scheduler
 
         }
 
+        public void UnenrollStudent(int studentID, int ccourseID)
+        {
+            MySqlConnection connection = new MySqlConnection(con);
+            connection.Open();
+            string query = "DELETE FROM enrolled_courses WHERE studentid = @StudentId AND courseid = @CourseId";
+
+            using (MySqlCommand command = new MySqlCommand(query, connection))
+            {
+                command.Parameters.AddWithValue("@StudentId", studentID);
+                command.Parameters.AddWithValue("@CourseNumber", ccourseID);
+                command.ExecuteNonQuery();
+
+            }
+
+        }
+
         public Student SearchStudentByEmail(string email)
         {
             Student student = new Student();
@@ -76,9 +92,6 @@ namespace Scheduler
                         }
                     }
             return student;
-
-
-
         }
     }
 }

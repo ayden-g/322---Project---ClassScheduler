@@ -107,5 +107,20 @@ namespace StudentDash
                 courNum = 0;
             }
         }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void lEndTime_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lStartTime_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

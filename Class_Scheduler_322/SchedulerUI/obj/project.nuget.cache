@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "oQscTOEZOXJUmcK4u7Lt0fLTbfv0DrpKqi59Zu03f1epMVtrtgAaagGiyN0tNWup+Dzl5YOME14taPSS8GAytA==",
+  "dgSpecHash": "fPA8iFDBxmmRyJSVYd+H6+yR+7hgH1k1Dh7205exKZEgIWgPm5YhB6YxkUNrj9fP+Ry/yYLUBnSOtjT6rXm6tQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Lapua\\Desktop\\Project\\Class_Scheduler_322\\SchedulerUI\\SchedulerUI.csproj",
+  "projectFilePath": "C:\\Users\\Lapua\\Desktop\\Final 2\\Class_Scheduler_322\\SchedulerUI\\SchedulerUI.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Lapua\\.nuget\\packages\\google.protobuf\\3.5.1\\google.protobuf.3.5.1.nupkg.sha512",
     "C:\\Users\\Lapua\\.nuget\\packages\\microsoft.netcore.platforms\\2.0.0\\microsoft.netcore.platforms.2.0.0.nupkg.sha512",

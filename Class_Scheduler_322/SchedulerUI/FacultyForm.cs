@@ -66,7 +66,7 @@ namespace SchedulerUI
                 SearchObject result = new SearchObject();
                 result.CourseObjectInstructor(txtUser.Text);
                 LoadResults_Faculty();
-                myCoursePanel.Height = myCoursePanel.Controls.Count * result.Height;
+                myCoursePanel.Height = myCoursePanel.Controls.Count * result.Height + 10;
                 edit_Course = true;
 
             }
@@ -144,9 +144,15 @@ namespace SchedulerUI
                 editPanel.Show();
                 Course course = new Course();
                 course.DeleteCourse(targetNumber);
+                Course.courseList.Clear();
                 MessageBox.Show("Course deleted successfully!");
                 editPanel.Hide();
             }
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

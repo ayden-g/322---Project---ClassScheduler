@@ -33,8 +33,8 @@
             this.studentScheduleBtn = new System.Windows.Forms.Button();
             this.txtUser = new System.Windows.Forms.TextBox();
             this.closeBtn = new System.Windows.Forms.Panel();
+            this.enrollBtn = new System.Windows.Forms.Button();
             this.removeCourseFromSched = new System.Windows.Forms.Button();
-            this.addCourseToSched = new System.Windows.Forms.Button();
             this.studentCatalogBtn = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.button2 = new System.Windows.Forms.Button();
@@ -50,7 +50,6 @@
             this.schedulePanel = new System.Windows.Forms.Panel();
             this.p1 = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
-            this.enrollBtn = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.closeBtn.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -103,7 +102,6 @@
             this.closeBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
             this.closeBtn.Controls.Add(this.enrollBtn);
             this.closeBtn.Controls.Add(this.removeCourseFromSched);
-            this.closeBtn.Controls.Add(this.addCourseToSched);
             this.closeBtn.Controls.Add(this.studentCatalogBtn);
             this.closeBtn.Controls.Add(this.studentScheduleBtn);
             this.closeBtn.Controls.Add(this.panel2);
@@ -114,32 +112,33 @@
             this.closeBtn.Size = new System.Drawing.Size(151, 600);
             this.closeBtn.TabIndex = 5;
             // 
+            // enrollBtn
+            // 
+            this.enrollBtn.BackColor = System.Drawing.Color.Firebrick;
+            this.enrollBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.enrollBtn.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.enrollBtn.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.enrollBtn.Location = new System.Drawing.Point(12, 340);
+            this.enrollBtn.Name = "enrollBtn";
+            this.enrollBtn.Size = new System.Drawing.Size(124, 49);
+            this.enrollBtn.TabIndex = 6;
+            this.enrollBtn.Text = "Enroll";
+            this.enrollBtn.UseVisualStyleBackColor = false;
+            this.enrollBtn.Click += new System.EventHandler(this.enrollBtn_Click);
+            // 
             // removeCourseFromSched
             // 
             this.removeCourseFromSched.BackColor = System.Drawing.Color.Firebrick;
             this.removeCourseFromSched.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.removeCourseFromSched.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.removeCourseFromSched.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.removeCourseFromSched.Location = new System.Drawing.Point(12, 340);
+            this.removeCourseFromSched.Location = new System.Drawing.Point(12, 285);
             this.removeCourseFromSched.Name = "removeCourseFromSched";
             this.removeCourseFromSched.Size = new System.Drawing.Size(124, 49);
             this.removeCourseFromSched.TabIndex = 5;
-            this.removeCourseFromSched.Text = "Remove";
+            this.removeCourseFromSched.Text = "Drop";
             this.removeCourseFromSched.UseVisualStyleBackColor = false;
-            // 
-            // addCourseToSched
-            // 
-            this.addCourseToSched.BackColor = System.Drawing.Color.Firebrick;
-            this.addCourseToSched.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.addCourseToSched.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.addCourseToSched.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.addCourseToSched.Location = new System.Drawing.Point(12, 285);
-            this.addCourseToSched.Name = "addCourseToSched";
-            this.addCourseToSched.Size = new System.Drawing.Size(124, 49);
-            this.addCourseToSched.TabIndex = 4;
-            this.addCourseToSched.Text = "Add";
-            this.addCourseToSched.UseVisualStyleBackColor = false;
-            this.addCourseToSched.Click += new System.EventHandler(this.addCourseToSched_Click);
+            this.removeCourseFromSched.Click += new System.EventHandler(this.removeCourseFromSched_Click);
             // 
             // studentCatalogBtn
             // 
@@ -309,20 +308,6 @@
             this.label2.TabIndex = 0;
             this.label2.Text = "Your Schedule";
             // 
-            // enrollBtn
-            // 
-            this.enrollBtn.BackColor = System.Drawing.Color.Firebrick;
-            this.enrollBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.enrollBtn.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.enrollBtn.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.enrollBtn.Location = new System.Drawing.Point(12, 395);
-            this.enrollBtn.Name = "enrollBtn";
-            this.enrollBtn.Size = new System.Drawing.Size(124, 49);
-            this.enrollBtn.TabIndex = 6;
-            this.enrollBtn.Text = "Enroll";
-            this.enrollBtn.UseVisualStyleBackColor = false;
-            this.enrollBtn.Click += new System.EventHandler(this.enrollBtn_Click);
-            // 
             // StudentsForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -379,7 +364,6 @@
         private Panel p1;
         private Label label2;
         private Button removeCourseFromSched;
-        private Button addCourseToSched;
         private Button enrollBtn;
     }
 }

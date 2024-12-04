@@ -202,22 +202,13 @@ namespace Scheduler
                     using (MySqlCommand cmd = new MySqlCommand(query, connection))
                     {
                         cmd.Parameters.AddWithValue("@CourseNumber", courseNumber);
-                        int rowsAffected = cmd.ExecuteNonQuery();
+                        cmd.ExecuteNonQuery();
 
-                        if (rowsAffected > 0)
-                        {
-                            Console.WriteLine("Course deleted successfully.");
-                        }
-                        else
-                        {
-                            Console.WriteLine("No course found with the provided course number.");
-                        }
                     }
                 }
             }
             catch (Exception ex)
             {
-                Console.WriteLine($"Error deleting course: {ex.Message}");
             }
         }
 

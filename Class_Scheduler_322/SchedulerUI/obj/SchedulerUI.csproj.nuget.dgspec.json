@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Lapua\\Desktop\\Project\\Class_Scheduler_322\\SchedulerUI\\SchedulerUI.csproj": {}
+    "C:\\Users\\Lapua\\Desktop\\Final 2\\Class_Scheduler_322\\SchedulerUI\\SchedulerUI.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Lapua\\Desktop\\Project\\Class_Scheduler_322\\SchedulerUI\\SchedulerUI.csproj": {
+    "C:\\Users\\Lapua\\Desktop\\Final 2\\Class_Scheduler_322\\SchedulerUI\\SchedulerUI.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Lapua\\Desktop\\Project\\Class_Scheduler_322\\SchedulerUI\\SchedulerUI.csproj",
+        "projectUniqueName": "C:\\Users\\Lapua\\Desktop\\Final 2\\Class_Scheduler_322\\SchedulerUI\\SchedulerUI.csproj",
         "projectName": "SchedulerUI",
-        "projectPath": "C:\\Users\\Lapua\\Desktop\\Project\\Class_Scheduler_322\\SchedulerUI\\SchedulerUI.csproj",
+        "projectPath": "C:\\Users\\Lapua\\Desktop\\Final 2\\Class_Scheduler_322\\SchedulerUI\\SchedulerUI.csproj",
         "packagesPath": "C:\\Users\\Lapua\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Lapua\\Desktop\\Project\\Class_Scheduler_322\\SchedulerUI\\obj\\",
+        "outputPath": "C:\\Users\\Lapua\\Desktop\\Final 2\\Class_Scheduler_322\\SchedulerUI\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Lapua\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -28,8 +28,8 @@
           "net6.0-windows7.0": {
             "targetAlias": "net6.0-windows",
             "projectReferences": {
-              "C:\\Users\\Lapua\\Desktop\\Project\\Class_Scheduler_322\\Scheduler\\Scheduler.csproj": {
-                "projectPath": "C:\\Users\\Lapua\\Desktop\\Project\\Class_Scheduler_322\\Scheduler\\Scheduler.csproj"
+              "C:\\Users\\Lapua\\Desktop\\Final 2\\Class_Scheduler_322\\Scheduler\\Scheduler.csproj": {
+                "projectPath": "C:\\Users\\Lapua\\Desktop\\Final 2\\Class_Scheduler_322\\Scheduler\\Scheduler.csproj"
               }
             }
           }
@@ -72,14 +72,14 @@
         }
       }
     },
-    "C:\\Users\\Lapua\\Desktop\\Project\\Class_Scheduler_322\\Scheduler\\Scheduler.csproj": {
+    "C:\\Users\\Lapua\\Desktop\\Final 2\\Class_Scheduler_322\\Scheduler\\Scheduler.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Lapua\\Desktop\\Project\\Class_Scheduler_322\\Scheduler\\Scheduler.csproj",
+        "projectUniqueName": "C:\\Users\\Lapua\\Desktop\\Final 2\\Class_Scheduler_322\\Scheduler\\Scheduler.csproj",
         "projectName": "Scheduler",
-        "projectPath": "C:\\Users\\Lapua\\Desktop\\Project\\Class_Scheduler_322\\Scheduler\\Scheduler.csproj",
+        "projectPath": "C:\\Users\\Lapua\\Desktop\\Final 2\\Class_Scheduler_322\\Scheduler\\Scheduler.csproj",
         "packagesPath": "C:\\Users\\Lapua\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Lapua\\Desktop\\Project\\Class_Scheduler_322\\Scheduler\\obj\\",
+        "outputPath": "C:\\Users\\Lapua\\Desktop\\Final 2\\Class_Scheduler_322\\Scheduler\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Lapua\\AppData\\Roaming\\NuGet\\NuGet.Config",

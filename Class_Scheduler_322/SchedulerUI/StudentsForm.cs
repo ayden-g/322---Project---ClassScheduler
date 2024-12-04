@@ -112,7 +112,6 @@ namespace SchedulerUI
                 p5.Hide();
                 p1.Show();
                 schedulePanel.Show();
-                addCourseToSched.Show();
                 removeCourseFromSched.Show();
                 studentSched = true;
             }
@@ -147,6 +146,18 @@ namespace SchedulerUI
                 Student enrollStudent = student;
                 enrollStudent.EnrollStudent(enrollStudent.Id, targetNumber);
             }
+        }
+
+        private void removeCourseFromSched_Click(object sender, EventArgs e)
+        {
+            Student student = new Student();
+            student = student.SearchStudentByEmail(txtUser.Text);
+            int targetCourse = SearchObject.courNum;
+            int targetID = student.Id;
+            student.UnenrollStudent(targetID, targetCourse);
+
+            SearchObject.courNum = 0;
+
         }
     }
 }

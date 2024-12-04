@@ -16,11 +16,11 @@
     <Compile Update="RegisterForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="StudentForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Update="StudentsForm.cs">
       <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="UserControl.cs">
+      <SubType>UserControl</SubType>
     </Compile>
   </ItemGroup>
 </Project>

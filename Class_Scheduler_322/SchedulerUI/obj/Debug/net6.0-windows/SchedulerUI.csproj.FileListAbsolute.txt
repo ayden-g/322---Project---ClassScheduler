@@ -32,3 +32,37 @@ C:\Users\Lapua\Desktop\Project\Class_Scheduler_322\SchedulerUI\obj\Debug\net6.0-
 C:\Users\Lapua\Desktop\Project\Class_Scheduler_322\SchedulerUI\obj\Debug\net6.0-windows\SchedulerUI.StudentForm.resources
 C:\Users\Lapua\Desktop\Project\Class_Scheduler_322\SchedulerUI\obj\Debug\net6.0-windows\SchedulerUI.CreationForm.resources
 C:\Users\Lapua\Desktop\Project\Class_Scheduler_322\SchedulerUI\obj\Debug\net6.0-windows\SchedulerUI.StudentsForm.resources
+C:\Users\Lapua\Desktop\Final 2\Class_Scheduler_322\SchedulerUI\bin\Debug\net6.0-windows\Scheduler.deps.json
+C:\Users\Lapua\Desktop\Final 2\Class_Scheduler_322\SchedulerUI\bin\Debug\net6.0-windows\Scheduler.runtimeconfig.json
+C:\Users\Lapua\Desktop\Final 2\Class_Scheduler_322\SchedulerUI\bin\Debug\net6.0-windows\Scheduler.exe
+C:\Users\Lapua\Desktop\Final 2\Class_Scheduler_322\SchedulerUI\bin\Debug\net6.0-windows\SchedulerUI.exe
+C:\Users\Lapua\Desktop\Final 2\Class_Scheduler_322\SchedulerUI\bin\Debug\net6.0-windows\SchedulerUI.deps.json
+C:\Users\Lapua\Desktop\Final 2\Class_Scheduler_322\SchedulerUI\bin\Debug\net6.0-windows\SchedulerUI.runtimeconfig.json
+C:\Users\Lapua\Desktop\Final 2\Class_Scheduler_322\SchedulerUI\bin\Debug\net6.0-windows\SchedulerUI.dll
+C:\Users\Lapua\Desktop\Final 2\Class_Scheduler_322\SchedulerUI\bin\Debug\net6.0-windows\SchedulerUI.pdb
+C:\Users\Lapua\Desktop\Final 2\Class_Scheduler_322\SchedulerUI\bin\Debug\net6.0-windows\Google.Protobuf.dll
+C:\Users\Lapua\Desktop\Final 2\Class_Scheduler_322\SchedulerUI\bin\Debug\net6.0-windows\MySql.Data.dll
+C:\Users\Lapua\Desktop\Final 2\Class_Scheduler_322\SchedulerUI\bin\Debug\net6.0-windows\Scheduler.dll
+C:\Users\Lapua\Desktop\Final 2\Class_Scheduler_322\SchedulerUI\bin\Debug\net6.0-windows\Scheduler.pdb
+C:\Users\Lapua\Desktop\Final 2\Class_Scheduler_322\SchedulerUI\obj\Debug\net6.0-windows\SchedulerUI.csproj.AssemblyReference.cache
+C:\Users\Lapua\Desktop\Final 2\Class_Scheduler_322\SchedulerUI\obj\Debug\net6.0-windows\SchedulerUI.AdminForm.resources
+C:\Users\Lapua\Desktop\Final 2\Class_Scheduler_322\SchedulerUI\obj\Debug\net6.0-windows\SchedulerUI.CreationForm.resources
+C:\Users\Lapua\Desktop\Final 2\Class_Scheduler_322\SchedulerUI\obj\Debug\net6.0-windows\SchedulerUI.FacultyForm.resources
+C:\Users\Lapua\Desktop\Final 2\Class_Scheduler_322\SchedulerUI\obj\Debug\net6.0-windows\SchedulerUI.LoginForm.resources
+C:\Users\Lapua\Desktop\Final 2\Class_Scheduler_322\SchedulerUI\obj\Debug\net6.0-windows\SchedulerUI.Properties.Resources.resources
+C:\Users\Lapua\Desktop\Final 2\Class_Scheduler_322\SchedulerUI\obj\Debug\net6.0-windows\SchedulerUI.RegisterForm.resources
+C:\Users\Lapua\Desktop\Final 2\Class_Scheduler_322\SchedulerUI\obj\Debug\net6.0-windows\StudentDash.SchedulerDashboard.resources
+C:\Users\Lapua\Desktop\Final 2\Class_Scheduler_322\SchedulerUI\obj\Debug\net6.0-windows\StudentDash.SearchObject.resources
+C:\Users\Lapua\Desktop\Final 2\Class_Scheduler_322\SchedulerUI\obj\Debug\net6.0-windows\SchedulerUI.StudentsForm.resources
+C:\Users\Lapua\Desktop\Final 2\Class_Scheduler_322\SchedulerUI\obj\Debug\net6.0-windows\SchedulerUI.csproj.GenerateResource.cache
+C:\Users\Lapua\Desktop\Final 2\Class_Scheduler_322\SchedulerUI\obj\Debug\net6.0-windows\SchedulerUI.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Lapua\Desktop\Final 2\Class_Scheduler_322\SchedulerUI\obj\Debug\net6.0-windows\SchedulerUI.AssemblyInfoInputs.cache
+C:\Users\Lapua\Desktop\Final 2\Class_Scheduler_322\SchedulerUI\obj\Debug\net6.0-windows\SchedulerUI.AssemblyInfo.cs
+C:\Users\Lapua\Desktop\Final 2\Class_Scheduler_322\SchedulerUI\obj\Debug\net6.0-windows\SchedulerUI.csproj.CoreCompileInputs.cache
+C:\Users\Lapua\Desktop\Final 2\Class_Scheduler_322\SchedulerUI\obj\Debug\net6.0-windows\SchedulerUI.csproj.CopyComplete
+C:\Users\Lapua\Desktop\Final 2\Class_Scheduler_322\SchedulerUI\obj\Debug\net6.0-windows\SchedulerUI.dll
+C:\Users\Lapua\Desktop\Final 2\Class_Scheduler_322\SchedulerUI\obj\Debug\net6.0-windows\refint\SchedulerUI.dll
+C:\Users\Lapua\Desktop\Final 2\Class_Scheduler_322\SchedulerUI\obj\Debug\net6.0-windows\SchedulerUI.pdb
+C:\Users\Lapua\Desktop\Final 2\Class_Scheduler_322\SchedulerUI\obj\Debug\net6.0-windows\SchedulerUI.genruntimeconfig.cache
+C:\Users\Lapua\Desktop\Final 2\Class_Scheduler_322\SchedulerUI\obj\Debug\net6.0-windows\ref\SchedulerUI.dll
+C:\Users\Lapua\Desktop\Final 2\Class_Scheduler_322\SchedulerUI\obj\Debug\net6.0-windows\SchedulerUI.UserControl.resources
