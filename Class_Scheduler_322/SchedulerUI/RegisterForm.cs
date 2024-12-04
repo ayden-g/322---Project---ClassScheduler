@@ -9,6 +9,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+using Scheduler;
+
 namespace SchedulerUI
 {
     public partial class RegisterForm : Form
@@ -50,15 +52,20 @@ namespace SchedulerUI
                 return;
             }
 
-            // Validate the user's email
-            if(!isValidatedUser(inputEmail))
+            User user = new User(inputEmail);
+            string res = user.isValidated(con);
+            if (res == "False")
             {
                 MessageBox.Show("User not in WSU system,", "Input Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
+            else if (res != "True")
+            {
+                MessageBox.Show("MySQL Error: " + res, "Registration Failed", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
 
             string query = "INSERT INTO users (email_adress, acc_password, user_type) VALUES (@Email, @Password, @UserType)";
-
             try
             {
                 using (con)
@@ -85,43 +92,12 @@ namespace SchedulerUI
             }
         }
 
-        private bool isValidatedUser(string inputEmail)
-        {
-            string validateQuery = "SELECT COUNT(*) FROM students WHERE e_mail = @Email";
-
-            try
-            {
-                using (con)
-                {
-                    con.Open();
-                    using (MySqlCommand cmd = new MySqlCommand(validateQuery, con))
-                    {
-                        cmd.Parameters.AddWithValue("@Email", inputEmail);
-
-                        int count = Convert.ToInt32(cmd.ExecuteScalar());
-                        return count > 0;
-                    }
-                }
-            }
-            catch (MySqlException ex)
-            {
-                MessageBox.Show("MySQL Error: " + ex.Message, "Registration Failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return false;
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("General Error: " + ex.Message, "Registration Failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return false;
-            }
-        }
-
         private void backToLoginBtn_Click(object sender, EventArgs e)
         {
             this.Close();
             LoginForm loginForm = new LoginForm();
             loginForm.StartPosition = FormStartPosition.CenterScreen;
             loginForm.Show();
-            
         }
 
         private void checkBox1_CheckedChanged(object sender, EventArgs e)
@@ -135,7 +111,6 @@ namespace SchedulerUI
             {
                 txtPassword.PasswordChar = '•';
                 txtPasswordVerify.PasswordChar = '•';
-
             }
         }
 
