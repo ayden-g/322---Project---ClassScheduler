@@ -96,6 +96,42 @@ namespace Scheduler
             }
         }
 
+        public void searchCourseByCourseNumber(int courseNumber)
+        {
+            using (MySqlConnection connection = new MySqlConnection(con))
+            {
+                connection.Open();
+
+                string query = "SELECT * FROM courses WHERE course_number = @CourseNumber";
+
+                using (MySqlCommand cmd = new MySqlCommand(query, connection))
+                {
+                    cmd.Parameters.AddWithValue("@CourseNumber", courseNumber);
+
+                    using (MySqlDataReader reader = cmd.ExecuteReader())
+                    {
+                        courseList.Clear();
+
+                        while (reader.Read())
+                        {
+                            Course searchCourse = new Course
+                            {
+                                CourseNumber = Convert.ToInt32(reader["course_number"]),
+                                Name = reader["course_name"].ToString(),
+                                Section = reader["course_section"].ToString(),
+                                Instructor = reader["course_instructor"].ToString(),
+                                Seating = Convert.ToInt32(reader["course_seats"]),
+                                StartTime = TimeOnly.Parse(reader["start_time"].ToString()),
+                                EndTime = TimeOnly.Parse(reader["end_time"].ToString()),
+                                MeetingDays = reader["meeting_days"].ToString()
+                            };
+                            courseList.Add(searchCourse);
+                        }
+                    }
+                }
+            }
+        }
+
         public void CreateCourse(Course course)
         {
             try
@@ -209,6 +245,56 @@ namespace Scheduler
             }
             catch (Exception ex)
             {
+            }
+        }
+
+        public void SearchCourseList(List<int> courseNumbers)
+        {
+            using (MySqlConnection connection = new MySqlConnection(con))
+            {
+                connection.Open();
+
+                StringBuilder queryBuilder = new StringBuilder("SELECT * FROM courses WHERE course_number IN (");
+                for (int i = 0; i < courseNumbers.Count; i++)
+                {
+                    queryBuilder.Append("@CourseNumber" + i);
+                    if (i < courseNumbers.Count - 1)
+                    {
+                        queryBuilder.Append(", ");
+                    }
+                }
+                queryBuilder.Append(")");
+
+                string query = queryBuilder.ToString();
+
+                using (MySqlCommand cmd = new MySqlCommand(query, connection))
+                {
+                    for (int i = 0; i < courseNumbers.Count; i++)
+                    {
+                        cmd.Parameters.AddWithValue("@CourseNumber" + i, courseNumbers[i]);
+                    }
+
+                    using (MySqlDataReader reader = cmd.ExecuteReader())
+                    {
+                        courseList.Clear();
+
+                        while (reader.Read())
+                        {
+                            Course searchCourse = new Course
+                            {
+                                CourseNumber = Convert.ToInt32(reader["course_number"]),
+                                Name = reader["course_name"].ToString(),
+                                Section = reader["course_section"].ToString(),
+                                Instructor = reader["course_instructor"].ToString(),
+                                Seating = Convert.ToInt32(reader["course_seats"]),
+                                StartTime = TimeOnly.Parse(reader["start_time"].ToString()),
+                                EndTime = TimeOnly.Parse(reader["end_time"].ToString()),
+                                MeetingDays = reader["meeting_days"].ToString()
+                            };
+                            courseList.Add(searchCourse);
+                        }
+                    }
+                }
             }
         }
 

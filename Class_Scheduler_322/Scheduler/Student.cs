@@ -23,60 +23,36 @@ namespace Scheduler
 
         }
 
-        public void EnrollStudent(int studentID, int courseNumber)
-        {
-            try
-            {
-                using (MySqlConnection connection = new MySqlConnection(con))
-                {
-                    connection.Open();
-
-                    if (NumberOfSeatsAvailable(connection, courseNumber) > 0)
-                    {
-                        // Enroll student in course
-                        string query = "INSERT INTO enrolled_courses (student_id, course_id) VALUES (@StudentId, @CourseNumber)";
-                        using (MySqlCommand command = new MySqlCommand(query, connection))
-                        {
-                            command.Parameters.AddWithValue("@StudentId", studentID);
-                            command.Parameters.AddWithValue("@CourseNumber", courseNumber);
-
-                            int rowsAffected = command.ExecuteNonQuery();
-                            if (rowsAffected > 0)
-                            {
-                                Console.WriteLine("Student successfully enrolled into the course");
-
-                                // Update seating
-                                UpdateSeating(connection, courseNumber);
-                            }
-                            else
-                            {
-                                Console.WriteLine("Failed to enroll");
-                            }
-                        }
-                    }
-                    else
-                    {
-                        Console.WriteLine("No available seats to enroll");
-                    }
-                }
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine($"Error Enrolling in course: {ex.Message}");
-            }
-        }
-
-        public void UnenrollStudent(int studentID, int ccourseID)
+        public void EnrollCourse(int studentID, int courseNumber)
         {
             MySqlConnection connection = new MySqlConnection(con);
             connection.Open();
+            string query = "INSERT INTO enrolled_courses (student_id, course_id) VALUES (@StudentId, @CourseNumber)";
 
-            string query = "DELETE FROM enrolled_courses WHERE studentid = @StudentId AND courseid = @CourseId";
             using (MySqlCommand command = new MySqlCommand(query, connection))
             {
                 command.Parameters.AddWithValue("@StudentId", studentID);
-                command.Parameters.AddWithValue("@CourseNumber", ccourseID);
-                command.ExecuteNonQuery();
+                command.Parameters.AddWithValue("@CourseNumber", courseNumber);
+            }
+
+        }
+
+        public void UnenrollCourse(int studentID, int courseID)
+        {
+            using (MySqlConnection connection = new MySqlConnection(con))
+            {
+                connection.Open();
+
+                string query = "DELETE FROM enrolled_courses WHERE student_id = @StudentId AND course_id = @CourseId";
+
+                using (MySqlCommand command = new MySqlCommand(query, connection))
+                {
+                    command.Parameters.AddWithValue("@StudentId", studentID);
+                    command.Parameters.AddWithValue("@CourseId", courseID);
+
+                    int rowsAffected = command.ExecuteNonQuery();
+
+                }
             }
         }
 
@@ -147,5 +123,33 @@ namespace Scheduler
                 }
             }
         }
+
+        public List<int> GetEnrolledCourses(int studentId)
+        {
+            List<int> courseIds = new List<int>();
+
+            using (MySqlConnection connection = new MySqlConnection(con))
+            {
+                connection.Open();
+
+                string query = "SELECT course_id FROM enrolled_courses WHERE student_id = @StudentId";
+
+                using (MySqlCommand command = new MySqlCommand(query, connection))
+                {
+                    command.Parameters.AddWithValue("@StudentId", studentId);
+
+                    using (MySqlDataReader reader = command.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            courseIds.Add(reader.GetInt32("course_id"));
+                        }
+                    }
+                }
+            }
+
+            return courseIds;
+        }
+
     }
 }

@@ -100,6 +100,8 @@ namespace SchedulerUI
             else
             {
                 searchPanel.Height = 0;
+                searchPanel.Controls.Clear();
+
             }
         }
 
@@ -107,22 +109,36 @@ namespace SchedulerUI
         {
             if (!studentSched)
             {
+                studentScheduleBtn.Text = "Back";
                 panel3.Hide();
                 button3.Hide();
                 p5.Hide();
                 p1.Show();
-                schedulePanel.Show();
                 removeCourseFromSched.Show();
                 studentSched = true;
+
+                Student student = new Student();
+                student.SearchStudentByEmail(txtUser.Text);
+                List<int> courseIds = student.GetEnrolledCourses(student.Id);
+
+                SearchObject result = new SearchObject();
+                result.CourseObjectId(courseIds);
+                LoadResults();
+
+                searchPanel.Height = searchPanel.Controls.Count * result.Height + 10;
+
+
             }
             else
             {
+                studentScheduleBtn.Text = "Your Schedule";
                 panel3.Show();
                 button3.Show();
                 panel3.Show();
                 p1.Hide();
                 schedulePanel.Hide();
                 studentSched = false;
+                searchPanel.Controls.Clear();
 
             }
         }
@@ -134,8 +150,7 @@ namespace SchedulerUI
                 int targetNumber = SearchObject.courNum;
                 Student student = new Student();
                 student.SearchStudentByEmail(txtUser.Text);
-                //Student enrollStudent = student;
-                student.EnrollStudent(student.Id, targetNumber);
+                student.EnrollCourse(student.Id, targetNumber);
             }
         }
 
@@ -145,7 +160,7 @@ namespace SchedulerUI
             student = student.SearchStudentByEmail(txtUser.Text);
             int targetCourse = SearchObject.courNum;
             int targetID = student.Id;
-            student.UnenrollStudent(targetID, targetCourse);
+            student.UnenrollCourse(targetID, targetCourse);
 
             SearchObject.courNum = 0;
 
