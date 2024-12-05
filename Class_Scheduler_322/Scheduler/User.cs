@@ -21,6 +21,37 @@ namespace Scheduler
 
         public User() { }
 
+        public string isValidated(MySqlConnection con, string email)
+        {
+            string validateQuery = "SELECT COUNT(*) FROM wsu_users WHERE e_mail = @Email";
+
+            try
+            {
+                using (con)
+                {
+                    con.Open();
+                    using (MySqlCommand cmd = new MySqlCommand(validateQuery, con))
+                    {
+                        cmd.Parameters.AddWithValue("@Email", email);
+
+                        int count = Convert.ToInt32(cmd.ExecuteScalar());
+                        if (count > 0)
+                            return "True";
+                        else
+                            return "False";
+                    }
+                }
+            }
+            catch (MySqlException ex)
+            {
+                return ex.Message;
+            }
+            catch (Exception ex)
+            {
+                return ex.Message;
+            }
+        }
+
         public void searchFaculty(string userType)
         {
             using (MySqlConnection connection = new MySqlConnection(con))
@@ -39,7 +70,7 @@ namespace Scheduler
                         {
                             User user = new User
                             {
-                                EmailAddress = reader["email_adress"].ToString(),
+                                EmailAddress = reader["email_address"].ToString(),
                                 Password = reader["acc_password"].ToString(),
                                 UserType = reader["user_type"].ToString()
                             };

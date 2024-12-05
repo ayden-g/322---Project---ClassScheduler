@@ -20,7 +20,7 @@ namespace Scheduler
                 {
                     connection.Open();
 
-                    string query = "DELETE FROM users WHERE email_adress = @EmailAddress";
+                    string query = "DELETE FROM users WHERE email_address = @EmailAddress";
 
                     using (MySqlCommand cmd = new MySqlCommand(query, connection))
                     {

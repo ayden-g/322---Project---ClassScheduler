@@ -38,7 +38,7 @@ namespace SchedulerUI
                 return;
             }
 
-            string query = "SELECT * FROM users WHERE email_adress = @Email AND acc_password = @Password";
+            string query = "SELECT * FROM users WHERE email_address = @Email AND acc_password = @Password";
             string queryStudents = "SELECT * FROM students WHERE e_mail = @Email AND student_id = @Password";
 
 
@@ -110,7 +110,7 @@ using (MySqlCommand fetchCmd = new MySqlCommand(fetchQuery, con))
         string userData = "Users in Database:\n";
         while (fetchReader.Read())
         {
-            string email = fetchReader["email_adress"].ToString();
+            string email = fetchReader["email_address"].ToString();
             string password = fetchReader["acc_password"].ToString();
             userData += $"Email: {email}, Password: {password}\n";
         }

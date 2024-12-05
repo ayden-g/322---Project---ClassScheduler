@@ -127,15 +127,6 @@ namespace SchedulerUI
             }
         }
 
-        private void addCourseToSched_Click(object sender, EventArgs e)
-        {
-            if (SearchObject.clicked = true)
-            {
-                int targetNumber = SearchObject.courNum;
-
-            }
-        }
-
         private void enrollBtn_Click(object sender, EventArgs e)
         {
             if (SearchObject.clicked = true)
@@ -143,8 +134,8 @@ namespace SchedulerUI
                 int targetNumber = SearchObject.courNum;
                 Student student = new Student();
                 student.SearchStudentByEmail(txtUser.Text);
-                Student enrollStudent = student;
-                enrollStudent.EnrollStudent(enrollStudent.Id, targetNumber);
+                //Student enrollStudent = student;
+                student.EnrollStudent(student.Id, targetNumber);
             }
         }
 

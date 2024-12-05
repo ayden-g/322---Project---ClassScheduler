@@ -1,0 +1,10 @@
+# Visual Studio files
+.vs/
+bin/
+obj/
+*.suo
+*.cache
+*.lock
+*.pdb
+*.dll
+*.exe
