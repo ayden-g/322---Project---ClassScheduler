@@ -4980,19 +4980,24 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Lapua\\.nuget\\packages\\": {}
+    "C:\\Users\\jacku\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Lapua\\Desktop\\Final 2\\2\\Class_Scheduler_322\\SchedulerUI\\SchedulerUI.csproj",
+      "projectUniqueName": "C:\\Temp\\CS\\WSU\\CPT_S-322\\Project\\newDumbRedundBranch\\322---Project---ClassScheduler\\Class_Scheduler_322\\SchedulerUI\\SchedulerUI.csproj",
       "projectName": "SchedulerUI",
-      "projectPath": "C:\\Users\\Lapua\\Desktop\\Final 2\\2\\Class_Scheduler_322\\SchedulerUI\\SchedulerUI.csproj",
-      "packagesPath": "C:\\Users\\Lapua\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Lapua\\Desktop\\Final 2\\2\\Class_Scheduler_322\\SchedulerUI\\obj\\",
+      "projectPath": "C:\\Temp\\CS\\WSU\\CPT_S-322\\Project\\newDumbRedundBranch\\322---Project---ClassScheduler\\Class_Scheduler_322\\SchedulerUI\\SchedulerUI.csproj",
+      "packagesPath": "C:\\Users\\jacku\\.nuget\\packages\\",
+      "outputPath": "C:\\Temp\\CS\\WSU\\CPT_S-322\\Project\\newDumbRedundBranch\\322---Project---ClassScheduler\\Class_Scheduler_322\\SchedulerUI\\obj\\",
       "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+      ],
       "configFilePaths": [
-        "C:\\Users\\Lapua\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\jacku\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -5000,14 +5005,15 @@
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+        "C:\\Program Files\\dotnet\\library-packs": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
         "net6.0-windows7.0": {
           "targetAlias": "net6.0-windows",
           "projectReferences": {
-            "C:\\Users\\Lapua\\Desktop\\Final 2\\2\\Class_Scheduler_322\\Scheduler\\Scheduler.csproj": {
-              "projectPath": "C:\\Users\\Lapua\\Desktop\\Final 2\\2\\Class_Scheduler_322\\Scheduler\\Scheduler.csproj"
+            "C:\\Temp\\CS\\WSU\\CPT_S-322\\Project\\newDumbRedundBranch\\322---Project---ClassScheduler\\Class_Scheduler_322\\Scheduler\\Scheduler.csproj": {
+              "projectPath": "C:\\Temp\\CS\\WSU\\CPT_S-322\\Project\\newDumbRedundBranch\\322---Project---ClassScheduler\\Class_Scheduler_322\\Scheduler\\Scheduler.csproj"
             }
           }
         }
@@ -5016,6 +5022,11 @@
         "warnAsError": [
           "NU1605"
         ]
+      },
+      "restoreAuditProperties": {
+        "enableAudit": "true",
+        "auditLevel": "low",
+        "auditMode": "direct"
       }
     },
     "frameworks": {
@@ -5038,6 +5049,24 @@
         ],
         "assetTargetFallback": true,
         "warn": true,
+        "downloadDependencies": [
+          {
+            "name": "Microsoft.AspNetCore.App.Ref",
+            "version": "[6.0.31, 6.0.31]"
+          },
+          {
+            "name": "Microsoft.NETCore.App.Host.win-x64",
+            "version": "[6.0.31, 6.0.31]"
+          },
+          {
+            "name": "Microsoft.NETCore.App.Ref",
+            "version": "[6.0.31, 6.0.31]"
+          },
+          {
+            "name": "Microsoft.WindowsDesktop.App.Ref",
+            "version": "[6.0.31, 6.0.31]"
+          }
+        ],
         "frameworkReferences": {
           "Microsoft.NETCore.App": {
             "privateAssets": "all"
@@ -5046,7 +5075,7 @@
             "privateAssets": "none"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.400\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.302\\RuntimeIdentifierGraph.json"
       }
     }
   },

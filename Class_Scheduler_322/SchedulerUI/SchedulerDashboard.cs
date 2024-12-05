@@ -53,7 +53,7 @@ namespace StudentDash
 
             try
             {
-                using (MySqlConnection con = new MySqlConnection("server=localhost;uid=root;pwd=Bisness2018!;database=scheduler_users"))
+                using (MySqlConnection con = new MySqlConnection("server=localhost;uid=root;pwd=EDCC-WWU-WSU-Underhill;database=scheduler_users"))
                 {
                     con.Open();
                     using (MySqlCommand cmd = new MySqlCommand(query, con))

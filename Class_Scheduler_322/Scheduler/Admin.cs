@@ -10,7 +10,7 @@ namespace Scheduler
     public class Admin
     {
 
-        string con = ("server=localhost;uid=root;pwd=Bisness2018!;database=scheduler_users");
+        string con = ("server=localhost;uid=root;pwd=EDCC-WWU-WSU-Underhill;database=scheduler_users");
 
         public void DeleteAccount(string email)
         {

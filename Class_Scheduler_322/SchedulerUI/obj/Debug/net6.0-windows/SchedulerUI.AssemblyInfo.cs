@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("SchedulerUI")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+5b75fd0b13ad478a7a315006a799de131b7f842c")]
 [assembly: System.Reflection.AssemblyProductAttribute("SchedulerUI")]
 [assembly: System.Reflection.AssemblyTitleAttribute("SchedulerUI")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

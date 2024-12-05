@@ -159,10 +159,15 @@ namespace SchedulerUI
             Student student = new Student();
             student = student.SearchStudentByEmail(txtUser.Text);
             int targetCourse = SearchObject.courNum;
-            int targetID = student.Id;
+            int targetID = 59113628;
             student.UnenrollCourse(targetID, targetCourse);
 
-            SearchObject.courNum = 0;
+            //SearchObject.courNum = 0;
+            //textBox1.Text = student.Id.ToString();
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
 
         }
     }

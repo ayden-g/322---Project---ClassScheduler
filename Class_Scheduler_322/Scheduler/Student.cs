@@ -15,7 +15,7 @@ namespace Scheduler
         public string LastName { get; set; }
         public string Email { get; set; }
 
-        string con = "server=localhost;uid=root;pwd=Bisness2018!;database=scheduler_users";
+        string con = "server=localhost;uid=root;pwd=EDCC-WWU-WSU-Underhill;database=scheduler_users";
 
 
         public Student()
@@ -25,16 +25,55 @@ namespace Scheduler
 
         public void EnrollCourse(int studentID, int courseNumber)
         {
-            MySqlConnection connection = new MySqlConnection(con);
-            connection.Open();
-            string query = "INSERT INTO enrolled_courses (student_id, course_id) VALUES (@StudentId, @CourseNumber)";
+            //MySqlConnection connection = new MySqlConnection(con);
+            //connection.Open();
+            //string query = "INSERT INTO enrolled_courses (student_id, course_id) VALUES (@StudentId, @CourseNumber)";
 
-            using (MySqlCommand command = new MySqlCommand(query, connection))
+            //using (MySqlCommand command = new MySqlCommand(query, connection))
+            //{
+            //    command.Parameters.AddWithValue("@StudentId", studentID);
+            //    command.Parameters.AddWithValue("@CourseNumber", courseNumber);
+            //}
+
+            try
             {
-                command.Parameters.AddWithValue("@StudentId", studentID);
-                command.Parameters.AddWithValue("@CourseNumber", courseNumber);
-            }
+                using (MySqlConnection connection = new MySqlConnection(con))
+                {
+                    connection.Open();
 
+                    if (NumberOfSeatsAvailable(connection, courseNumber) > 0)
+                    {
+                        // Enroll student in course
+                        string query = "INSERT INTO enrolled_courses (student_id, course_id) VALUES (@StudentId, @CourseNumber)";
+                        using (MySqlCommand command = new MySqlCommand(query, connection))
+                        {
+                            command.Parameters.AddWithValue("@StudentId", studentID);
+                            command.Parameters.AddWithValue("@CourseNumber", courseNumber);
+
+                            int rowsAffected = command.ExecuteNonQuery();
+                            if (rowsAffected > 0)
+                            {
+                                Console.WriteLine("Student successfully enrolled into the course");
+
+                                // Update seating
+                                UpdateSeating(connection, courseNumber);
+                            }
+                            else
+                            {
+                                Console.WriteLine("Failed to enroll");
+                            }
+                        }
+                    }
+                    else
+                    {
+                        Console.WriteLine("No available seats to enroll");
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Error Enrolling in course: {ex.Message}");
+            }
         }
 
         public void UnenrollCourse(int studentID, int courseID)
@@ -74,10 +113,10 @@ namespace Scheduler
                     {
                         while (reader.Read())
                         {
-                            Id = reader.GetInt32("student_id");
-                            FirstName = reader.GetString("first_name");
-                            LastName = reader.GetString("last_name");
-                            Email = reader.GetString("e_mail");
+                            student.Id = reader.GetInt32("student_id");
+                            student.FirstName = reader.GetString("first_name");
+                            student.LastName = reader.GetString("last_name");
+                            student.Email = reader.GetString("e_mail");
                         }
                     }
                 }

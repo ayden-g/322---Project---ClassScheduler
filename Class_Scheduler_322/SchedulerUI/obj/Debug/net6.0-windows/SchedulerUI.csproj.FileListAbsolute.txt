@@ -135,3 +135,38 @@ C:\Users\Lapua\Desktop\Final 2\2\Class_Scheduler_322\SchedulerUI\obj\Debug\net6.
 C:\Users\Lapua\Desktop\Final 2\2\Class_Scheduler_322\SchedulerUI\obj\Debug\net6.0-windows\SchedulerUI.pdb
 C:\Users\Lapua\Desktop\Final 2\2\Class_Scheduler_322\SchedulerUI\obj\Debug\net6.0-windows\SchedulerUI.genruntimeconfig.cache
 C:\Users\Lapua\Desktop\Final 2\2\Class_Scheduler_322\SchedulerUI\obj\Debug\net6.0-windows\ref\SchedulerUI.dll
+C:\Temp\CS\WSU\CPT_S-322\Project\newDumbRedundBranch\322---Project---ClassScheduler\Class_Scheduler_322\SchedulerUI\bin\Debug\net6.0-windows\Scheduler.deps.json
+C:\Temp\CS\WSU\CPT_S-322\Project\newDumbRedundBranch\322---Project---ClassScheduler\Class_Scheduler_322\SchedulerUI\bin\Debug\net6.0-windows\Scheduler.runtimeconfig.json
+C:\Temp\CS\WSU\CPT_S-322\Project\newDumbRedundBranch\322---Project---ClassScheduler\Class_Scheduler_322\SchedulerUI\bin\Debug\net6.0-windows\Scheduler.exe
+C:\Temp\CS\WSU\CPT_S-322\Project\newDumbRedundBranch\322---Project---ClassScheduler\Class_Scheduler_322\SchedulerUI\bin\Debug\net6.0-windows\SchedulerUI.exe
+C:\Temp\CS\WSU\CPT_S-322\Project\newDumbRedundBranch\322---Project---ClassScheduler\Class_Scheduler_322\SchedulerUI\bin\Debug\net6.0-windows\SchedulerUI.deps.json
+C:\Temp\CS\WSU\CPT_S-322\Project\newDumbRedundBranch\322---Project---ClassScheduler\Class_Scheduler_322\SchedulerUI\bin\Debug\net6.0-windows\SchedulerUI.runtimeconfig.json
+C:\Temp\CS\WSU\CPT_S-322\Project\newDumbRedundBranch\322---Project---ClassScheduler\Class_Scheduler_322\SchedulerUI\bin\Debug\net6.0-windows\SchedulerUI.dll
+C:\Temp\CS\WSU\CPT_S-322\Project\newDumbRedundBranch\322---Project---ClassScheduler\Class_Scheduler_322\SchedulerUI\bin\Debug\net6.0-windows\SchedulerUI.pdb
+C:\Temp\CS\WSU\CPT_S-322\Project\newDumbRedundBranch\322---Project---ClassScheduler\Class_Scheduler_322\SchedulerUI\bin\Debug\net6.0-windows\Google.Protobuf.dll
+C:\Temp\CS\WSU\CPT_S-322\Project\newDumbRedundBranch\322---Project---ClassScheduler\Class_Scheduler_322\SchedulerUI\bin\Debug\net6.0-windows\MySql.Data.dll
+C:\Temp\CS\WSU\CPT_S-322\Project\newDumbRedundBranch\322---Project---ClassScheduler\Class_Scheduler_322\SchedulerUI\bin\Debug\net6.0-windows\Scheduler.dll
+C:\Temp\CS\WSU\CPT_S-322\Project\newDumbRedundBranch\322---Project---ClassScheduler\Class_Scheduler_322\SchedulerUI\bin\Debug\net6.0-windows\Scheduler.pdb
+C:\Temp\CS\WSU\CPT_S-322\Project\newDumbRedundBranch\322---Project---ClassScheduler\Class_Scheduler_322\SchedulerUI\obj\Debug\net6.0-windows\SchedulerUI.csproj.AssemblyReference.cache
+C:\Temp\CS\WSU\CPT_S-322\Project\newDumbRedundBranch\322---Project---ClassScheduler\Class_Scheduler_322\SchedulerUI\obj\Debug\net6.0-windows\SchedulerUI.AdminForm.resources
+C:\Temp\CS\WSU\CPT_S-322\Project\newDumbRedundBranch\322---Project---ClassScheduler\Class_Scheduler_322\SchedulerUI\obj\Debug\net6.0-windows\SchedulerUI.CreationForm.resources
+C:\Temp\CS\WSU\CPT_S-322\Project\newDumbRedundBranch\322---Project---ClassScheduler\Class_Scheduler_322\SchedulerUI\obj\Debug\net6.0-windows\SchedulerUI.FacultyForm.resources
+C:\Temp\CS\WSU\CPT_S-322\Project\newDumbRedundBranch\322---Project---ClassScheduler\Class_Scheduler_322\SchedulerUI\obj\Debug\net6.0-windows\SchedulerUI.LoginForm.resources
+C:\Temp\CS\WSU\CPT_S-322\Project\newDumbRedundBranch\322---Project---ClassScheduler\Class_Scheduler_322\SchedulerUI\obj\Debug\net6.0-windows\SchedulerUI.Properties.Resources.resources
+C:\Temp\CS\WSU\CPT_S-322\Project\newDumbRedundBranch\322---Project---ClassScheduler\Class_Scheduler_322\SchedulerUI\obj\Debug\net6.0-windows\SchedulerUI.RegisterForm.resources
+C:\Temp\CS\WSU\CPT_S-322\Project\newDumbRedundBranch\322---Project---ClassScheduler\Class_Scheduler_322\SchedulerUI\obj\Debug\net6.0-windows\StudentDash.SchedulerDashboard.resources
+C:\Temp\CS\WSU\CPT_S-322\Project\newDumbRedundBranch\322---Project---ClassScheduler\Class_Scheduler_322\SchedulerUI\obj\Debug\net6.0-windows\StudentDash.SearchObject.resources
+C:\Temp\CS\WSU\CPT_S-322\Project\newDumbRedundBranch\322---Project---ClassScheduler\Class_Scheduler_322\SchedulerUI\obj\Debug\net6.0-windows\SchedulerUI.StudentsForm.resources
+C:\Temp\CS\WSU\CPT_S-322\Project\newDumbRedundBranch\322---Project---ClassScheduler\Class_Scheduler_322\SchedulerUI\obj\Debug\net6.0-windows\SchedulerUI.UserControl.resources
+C:\Temp\CS\WSU\CPT_S-322\Project\newDumbRedundBranch\322---Project---ClassScheduler\Class_Scheduler_322\SchedulerUI\obj\Debug\net6.0-windows\SchedulerUI.csproj.GenerateResource.cache
+C:\Temp\CS\WSU\CPT_S-322\Project\newDumbRedundBranch\322---Project---ClassScheduler\Class_Scheduler_322\SchedulerUI\obj\Debug\net6.0-windows\SchedulerUI.GeneratedMSBuildEditorConfig.editorconfig
+C:\Temp\CS\WSU\CPT_S-322\Project\newDumbRedundBranch\322---Project---ClassScheduler\Class_Scheduler_322\SchedulerUI\obj\Debug\net6.0-windows\SchedulerUI.AssemblyInfoInputs.cache
+C:\Temp\CS\WSU\CPT_S-322\Project\newDumbRedundBranch\322---Project---ClassScheduler\Class_Scheduler_322\SchedulerUI\obj\Debug\net6.0-windows\SchedulerUI.AssemblyInfo.cs
+C:\Temp\CS\WSU\CPT_S-322\Project\newDumbRedundBranch\322---Project---ClassScheduler\Class_Scheduler_322\SchedulerUI\obj\Debug\net6.0-windows\SchedulerUI.csproj.CoreCompileInputs.cache
+C:\Temp\CS\WSU\CPT_S-322\Project\newDumbRedundBranch\322---Project---ClassScheduler\Class_Scheduler_322\SchedulerUI\obj\Debug\net6.0-windows\SchedulerUI.sourcelink.json
+C:\Temp\CS\WSU\CPT_S-322\Project\newDumbRedundBranch\322---Project---ClassScheduler\Class_Scheduler_322\SchedulerUI\obj\Debug\net6.0-windows\Schedule.022106BC.Up2Date
+C:\Temp\CS\WSU\CPT_S-322\Project\newDumbRedundBranch\322---Project---ClassScheduler\Class_Scheduler_322\SchedulerUI\obj\Debug\net6.0-windows\SchedulerUI.dll
+C:\Temp\CS\WSU\CPT_S-322\Project\newDumbRedundBranch\322---Project---ClassScheduler\Class_Scheduler_322\SchedulerUI\obj\Debug\net6.0-windows\refint\SchedulerUI.dll
+C:\Temp\CS\WSU\CPT_S-322\Project\newDumbRedundBranch\322---Project---ClassScheduler\Class_Scheduler_322\SchedulerUI\obj\Debug\net6.0-windows\SchedulerUI.pdb
+C:\Temp\CS\WSU\CPT_S-322\Project\newDumbRedundBranch\322---Project---ClassScheduler\Class_Scheduler_322\SchedulerUI\obj\Debug\net6.0-windows\SchedulerUI.genruntimeconfig.cache
+C:\Temp\CS\WSU\CPT_S-322\Project\newDumbRedundBranch\322---Project---ClassScheduler\Class_Scheduler_322\SchedulerUI\obj\Debug\net6.0-windows\ref\SchedulerUI.dll

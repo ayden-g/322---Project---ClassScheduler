@@ -29,317 +29,326 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(StudentsForm));
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.studentScheduleBtn = new System.Windows.Forms.Button();
-            this.txtUser = new System.Windows.Forms.TextBox();
-            this.closeBtn = new System.Windows.Forms.Panel();
-            this.enrollBtn = new System.Windows.Forms.Button();
-            this.removeCourseFromSched = new System.Windows.Forms.Button();
-            this.studentCatalogBtn = new System.Windows.Forms.Button();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.button2 = new System.Windows.Forms.Button();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.p5 = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
-            this.searchPanel = new System.Windows.Forms.FlowLayoutPanel();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.button3 = new System.Windows.Forms.Button();
-            this.panel4 = new System.Windows.Forms.Panel();
-            this.studentSearch = new System.Windows.Forms.TextBox();
-            this.schedulePanel = new System.Windows.Forms.Panel();
-            this.p1 = new System.Windows.Forms.Panel();
-            this.label2 = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            this.closeBtn.SuspendLayout();
-            this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            this.p5.SuspendLayout();
-            this.panel3.SuspendLayout();
-            this.panel4.SuspendLayout();
-            this.p1.SuspendLayout();
-            this.SuspendLayout();
+            pictureBox2 = new PictureBox();
+            studentScheduleBtn = new Button();
+            txtUser = new TextBox();
+            closeBtn = new Panel();
+            enrollBtn = new Button();
+            removeCourseFromSched = new Button();
+            studentCatalogBtn = new Button();
+            panel2 = new Panel();
+            button2 = new Button();
+            pictureBox1 = new PictureBox();
+            button1 = new Button();
+            p5 = new Panel();
+            label1 = new Label();
+            searchPanel = new FlowLayoutPanel();
+            panel3 = new Panel();
+            button3 = new Button();
+            panel4 = new Panel();
+            studentSearch = new TextBox();
+            schedulePanel = new Panel();
+            p1 = new Panel();
+            label2 = new Label();
+            textBox1 = new TextBox();
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
+            closeBtn.SuspendLayout();
+            panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            p5.SuspendLayout();
+            panel3.SuspendLayout();
+            panel4.SuspendLayout();
+            p1.SuspendLayout();
+            SuspendLayout();
             // 
             // pictureBox2
             // 
-            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(12, 12);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(124, 114);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox2.TabIndex = 0;
-            this.pictureBox2.TabStop = false;
+            pictureBox2.Image = (Image)resources.GetObject("pictureBox2.Image");
+            pictureBox2.Location = new Point(12, 12);
+            pictureBox2.Name = "pictureBox2";
+            pictureBox2.Size = new Size(124, 114);
+            pictureBox2.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBox2.TabIndex = 0;
+            pictureBox2.TabStop = false;
             // 
             // studentScheduleBtn
             // 
-            this.studentScheduleBtn.BackColor = System.Drawing.Color.Firebrick;
-            this.studentScheduleBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.studentScheduleBtn.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.studentScheduleBtn.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.studentScheduleBtn.Location = new System.Drawing.Point(12, 175);
-            this.studentScheduleBtn.Name = "studentScheduleBtn";
-            this.studentScheduleBtn.Size = new System.Drawing.Size(124, 49);
-            this.studentScheduleBtn.TabIndex = 2;
-            this.studentScheduleBtn.Text = "Schedule";
-            this.studentScheduleBtn.UseVisualStyleBackColor = false;
-            this.studentScheduleBtn.Click += new System.EventHandler(this.studentScheduleBtn_Click);
+            studentScheduleBtn.BackColor = Color.Firebrick;
+            studentScheduleBtn.FlatStyle = FlatStyle.Flat;
+            studentScheduleBtn.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point);
+            studentScheduleBtn.ForeColor = Color.WhiteSmoke;
+            studentScheduleBtn.Location = new Point(12, 175);
+            studentScheduleBtn.Name = "studentScheduleBtn";
+            studentScheduleBtn.Size = new Size(124, 49);
+            studentScheduleBtn.TabIndex = 2;
+            studentScheduleBtn.Text = "Schedule";
+            studentScheduleBtn.UseVisualStyleBackColor = false;
+            studentScheduleBtn.Click += studentScheduleBtn_Click;
             // 
             // txtUser
             // 
-            this.txtUser.BackColor = System.Drawing.Color.Firebrick;
-            this.txtUser.Enabled = false;
-            this.txtUser.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.txtUser.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.txtUser.Location = new System.Drawing.Point(12, 131);
-            this.txtUser.Name = "txtUser";
-            this.txtUser.Size = new System.Drawing.Size(124, 29);
-            this.txtUser.TabIndex = 1;
-            this.txtUser.Text = "USER";
-            this.txtUser.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            txtUser.BackColor = Color.Firebrick;
+            txtUser.Enabled = false;
+            txtUser.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            txtUser.ForeColor = Color.WhiteSmoke;
+            txtUser.Location = new Point(12, 131);
+            txtUser.Name = "txtUser";
+            txtUser.Size = new Size(124, 29);
+            txtUser.TabIndex = 1;
+            txtUser.Text = "USER";
+            txtUser.TextAlign = HorizontalAlignment.Center;
             // 
             // closeBtn
             // 
-            this.closeBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
-            this.closeBtn.Controls.Add(this.enrollBtn);
-            this.closeBtn.Controls.Add(this.removeCourseFromSched);
-            this.closeBtn.Controls.Add(this.studentCatalogBtn);
-            this.closeBtn.Controls.Add(this.studentScheduleBtn);
-            this.closeBtn.Controls.Add(this.panel2);
-            this.closeBtn.Dock = System.Windows.Forms.DockStyle.Left;
-            this.closeBtn.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.closeBtn.Location = new System.Drawing.Point(0, 0);
-            this.closeBtn.Name = "closeBtn";
-            this.closeBtn.Size = new System.Drawing.Size(151, 600);
-            this.closeBtn.TabIndex = 5;
+            closeBtn.BackColor = Color.FromArgb(30, 30, 30);
+            closeBtn.Controls.Add(enrollBtn);
+            closeBtn.Controls.Add(removeCourseFromSched);
+            closeBtn.Controls.Add(studentCatalogBtn);
+            closeBtn.Controls.Add(studentScheduleBtn);
+            closeBtn.Controls.Add(panel2);
+            closeBtn.Dock = DockStyle.Left;
+            closeBtn.ForeColor = SystemColors.ControlText;
+            closeBtn.Location = new Point(0, 0);
+            closeBtn.Name = "closeBtn";
+            closeBtn.Size = new Size(151, 600);
+            closeBtn.TabIndex = 5;
             // 
             // enrollBtn
             // 
-            this.enrollBtn.BackColor = System.Drawing.Color.Firebrick;
-            this.enrollBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.enrollBtn.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.enrollBtn.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.enrollBtn.Location = new System.Drawing.Point(12, 340);
-            this.enrollBtn.Name = "enrollBtn";
-            this.enrollBtn.Size = new System.Drawing.Size(124, 49);
-            this.enrollBtn.TabIndex = 6;
-            this.enrollBtn.Text = "Enroll";
-            this.enrollBtn.UseVisualStyleBackColor = false;
-            this.enrollBtn.Click += new System.EventHandler(this.enrollBtn_Click);
+            enrollBtn.BackColor = Color.Firebrick;
+            enrollBtn.FlatStyle = FlatStyle.Flat;
+            enrollBtn.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point);
+            enrollBtn.ForeColor = Color.WhiteSmoke;
+            enrollBtn.Location = new Point(12, 340);
+            enrollBtn.Name = "enrollBtn";
+            enrollBtn.Size = new Size(124, 49);
+            enrollBtn.TabIndex = 6;
+            enrollBtn.Text = "Enroll";
+            enrollBtn.UseVisualStyleBackColor = false;
+            enrollBtn.Click += enrollBtn_Click;
             // 
             // removeCourseFromSched
             // 
-            this.removeCourseFromSched.BackColor = System.Drawing.Color.Firebrick;
-            this.removeCourseFromSched.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.removeCourseFromSched.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.removeCourseFromSched.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.removeCourseFromSched.Location = new System.Drawing.Point(12, 285);
-            this.removeCourseFromSched.Name = "removeCourseFromSched";
-            this.removeCourseFromSched.Size = new System.Drawing.Size(124, 49);
-            this.removeCourseFromSched.TabIndex = 5;
-            this.removeCourseFromSched.Text = "Drop";
-            this.removeCourseFromSched.UseVisualStyleBackColor = false;
-            this.removeCourseFromSched.Click += new System.EventHandler(this.removeCourseFromSched_Click);
+            removeCourseFromSched.BackColor = Color.Firebrick;
+            removeCourseFromSched.FlatStyle = FlatStyle.Flat;
+            removeCourseFromSched.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point);
+            removeCourseFromSched.ForeColor = Color.WhiteSmoke;
+            removeCourseFromSched.Location = new Point(12, 285);
+            removeCourseFromSched.Name = "removeCourseFromSched";
+            removeCourseFromSched.Size = new Size(124, 49);
+            removeCourseFromSched.TabIndex = 5;
+            removeCourseFromSched.Text = "Drop";
+            removeCourseFromSched.UseVisualStyleBackColor = false;
+            removeCourseFromSched.Click += removeCourseFromSched_Click;
             // 
             // studentCatalogBtn
             // 
-            this.studentCatalogBtn.BackColor = System.Drawing.Color.Firebrick;
-            this.studentCatalogBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.studentCatalogBtn.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.studentCatalogBtn.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.studentCatalogBtn.Location = new System.Drawing.Point(12, 230);
-            this.studentCatalogBtn.Name = "studentCatalogBtn";
-            this.studentCatalogBtn.Size = new System.Drawing.Size(124, 49);
-            this.studentCatalogBtn.TabIndex = 3;
-            this.studentCatalogBtn.Text = "Catalog";
-            this.studentCatalogBtn.UseVisualStyleBackColor = false;
-            this.studentCatalogBtn.Click += new System.EventHandler(this.studentCatalogBtn_Click);
+            studentCatalogBtn.BackColor = Color.Firebrick;
+            studentCatalogBtn.FlatStyle = FlatStyle.Flat;
+            studentCatalogBtn.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point);
+            studentCatalogBtn.ForeColor = Color.WhiteSmoke;
+            studentCatalogBtn.Location = new Point(12, 230);
+            studentCatalogBtn.Name = "studentCatalogBtn";
+            studentCatalogBtn.Size = new Size(124, 49);
+            studentCatalogBtn.TabIndex = 3;
+            studentCatalogBtn.Text = "Catalog";
+            studentCatalogBtn.UseVisualStyleBackColor = false;
+            studentCatalogBtn.Click += studentCatalogBtn_Click;
             // 
             // panel2
             // 
-            this.panel2.Controls.Add(this.txtUser);
-            this.panel2.Controls.Add(this.pictureBox2);
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel2.Location = new System.Drawing.Point(0, 0);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(151, 169);
-            this.panel2.TabIndex = 0;
+            panel2.Controls.Add(txtUser);
+            panel2.Controls.Add(pictureBox2);
+            panel2.Dock = DockStyle.Top;
+            panel2.Location = new Point(0, 0);
+            panel2.Name = "panel2";
+            panel2.Size = new Size(151, 169);
+            panel2.TabIndex = 0;
             // 
             // button2
             // 
-            this.button2.BackColor = System.Drawing.Color.Firebrick;
-            this.button2.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Font = new System.Drawing.Font("Segoe UI Black", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.button2.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.button2.Location = new System.Drawing.Point(943, -73);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(30, 30);
-            this.button2.TabIndex = 6;
-            this.button2.Text = "X";
-            this.button2.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.button2.UseVisualStyleBackColor = false;
+            button2.BackColor = Color.Firebrick;
+            button2.Cursor = Cursors.Hand;
+            button2.FlatStyle = FlatStyle.Flat;
+            button2.Font = new Font("Segoe UI Black", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            button2.ForeColor = Color.WhiteSmoke;
+            button2.Location = new Point(943, -73);
+            button2.Name = "button2";
+            button2.Size = new Size(30, 30);
+            button2.TabIndex = 6;
+            button2.Text = "X";
+            button2.TextAlign = ContentAlignment.TopCenter;
+            button2.UseVisualStyleBackColor = false;
             // 
             // pictureBox1
             // 
-            this.pictureBox1.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(-108, -296);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(1200, 1152);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
-            this.pictureBox1.TabIndex = 4;
-            this.pictureBox1.TabStop = false;
-            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
+            pictureBox1.BackColor = Color.WhiteSmoke;
+            pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
+            pictureBox1.Location = new Point(-108, -296);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(1200, 1152);
+            pictureBox1.SizeMode = PictureBoxSizeMode.AutoSize;
+            pictureBox1.TabIndex = 4;
+            pictureBox1.TabStop = false;
+            pictureBox1.Click += pictureBox1_Click;
             // 
             // button1
             // 
-            this.button1.BackColor = System.Drawing.Color.Firebrick;
-            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Segoe UI Black", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.button1.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.button1.Location = new System.Drawing.Point(966, 3);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(30, 30);
-            this.button1.TabIndex = 8;
-            this.button1.Text = "X";
-            this.button1.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            button1.BackColor = Color.Firebrick;
+            button1.Cursor = Cursors.Hand;
+            button1.FlatStyle = FlatStyle.Flat;
+            button1.Font = new Font("Segoe UI Black", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            button1.ForeColor = Color.WhiteSmoke;
+            button1.Location = new Point(966, 3);
+            button1.Name = "button1";
+            button1.Size = new Size(30, 30);
+            button1.TabIndex = 8;
+            button1.Text = "X";
+            button1.TextAlign = ContentAlignment.TopCenter;
+            button1.UseVisualStyleBackColor = false;
+            button1.Click += button1_Click;
             // 
             // p5
             // 
-            this.p5.BackColor = System.Drawing.Color.Firebrick;
-            this.p5.Controls.Add(this.label1);
-            this.p5.Location = new System.Drawing.Point(169, 15);
-            this.p5.Name = "p5";
-            this.p5.Size = new System.Drawing.Size(670, 76);
-            this.p5.TabIndex = 9;
+            p5.BackColor = Color.Firebrick;
+            p5.Controls.Add(label1);
+            p5.Location = new Point(169, 15);
+            p5.Name = "p5";
+            p5.Size = new Size(670, 76);
+            p5.TabIndex = 9;
             // 
             // label1
             // 
-            this.label1.AutoSize = true;
-            this.label1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.label1.Font = new System.Drawing.Font("Segoe UI", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label1.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.label1.Location = new System.Drawing.Point(3, 15);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(247, 45);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Course Catalog";
+            label1.AutoSize = true;
+            label1.FlatStyle = FlatStyle.Popup;
+            label1.Font = new Font("Segoe UI", 24F, FontStyle.Bold, GraphicsUnit.Point);
+            label1.ForeColor = Color.WhiteSmoke;
+            label1.Location = new Point(3, 15);
+            label1.Name = "label1";
+            label1.Size = new Size(247, 45);
+            label1.TabIndex = 0;
+            label1.Text = "Course Catalog";
             // 
             // searchPanel
             // 
-            this.searchPanel.AutoScroll = true;
-            this.searchPanel.Location = new System.Drawing.Point(168, 91);
-            this.searchPanel.Name = "searchPanel";
-            this.searchPanel.Size = new System.Drawing.Size(670, 0);
-            this.searchPanel.TabIndex = 11;
+            searchPanel.AutoScroll = true;
+            searchPanel.Location = new Point(168, 91);
+            searchPanel.Name = "searchPanel";
+            searchPanel.Size = new Size(670, 0);
+            searchPanel.TabIndex = 11;
             // 
             // panel3
             // 
-            this.panel3.Controls.Add(this.button3);
-            this.panel3.Controls.Add(this.panel4);
-            this.panel3.Location = new System.Drawing.Point(168, 12);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(670, 79);
-            this.panel3.TabIndex = 10;
+            panel3.Controls.Add(button3);
+            panel3.Controls.Add(panel4);
+            panel3.Location = new Point(168, 12);
+            panel3.Name = "panel3";
+            panel3.Size = new Size(670, 79);
+            panel3.TabIndex = 10;
             // 
             // button3
             // 
-            this.button3.BackColor = System.Drawing.Color.Firebrick;
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.Font = new System.Drawing.Font("Segoe UI Black", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.button3.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.button3.Location = new System.Drawing.Point(614, 18);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(51, 40);
-            this.button3.TabIndex = 1;
-            this.button3.Text = ">>>";
-            this.button3.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.button3.UseVisualStyleBackColor = false;
+            button3.BackColor = Color.Firebrick;
+            button3.FlatStyle = FlatStyle.Flat;
+            button3.Font = new Font("Segoe UI Black", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            button3.ForeColor = Color.WhiteSmoke;
+            button3.Location = new Point(614, 18);
+            button3.Name = "button3";
+            button3.Size = new Size(51, 40);
+            button3.TabIndex = 1;
+            button3.Text = ">>>";
+            button3.TextAlign = ContentAlignment.BottomCenter;
+            button3.UseVisualStyleBackColor = false;
             // 
             // panel4
             // 
-            this.panel4.BackColor = System.Drawing.SystemColors.Window;
-            this.panel4.Controls.Add(this.studentSearch);
-            this.panel4.Location = new System.Drawing.Point(13, 18);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(595, 40);
-            this.panel4.TabIndex = 2;
+            panel4.BackColor = SystemColors.Window;
+            panel4.Controls.Add(studentSearch);
+            panel4.Location = new Point(13, 18);
+            panel4.Name = "panel4";
+            panel4.Size = new Size(595, 40);
+            panel4.TabIndex = 2;
             // 
             // studentSearch
             // 
-            this.studentSearch.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.studentSearch.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.studentSearch.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.studentSearch.Location = new System.Drawing.Point(3, 8);
-            this.studentSearch.Name = "studentSearch";
-            this.studentSearch.PlaceholderText = "Search Course";
-            this.studentSearch.Size = new System.Drawing.Size(592, 22);
-            this.studentSearch.TabIndex = 0;
-            this.studentSearch.TextChanged += new System.EventHandler(this.studentSearch_TextChanged);
+            studentSearch.BorderStyle = BorderStyle.None;
+            studentSearch.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            studentSearch.ForeColor = SystemColors.ControlDarkDark;
+            studentSearch.Location = new Point(3, 8);
+            studentSearch.Name = "studentSearch";
+            studentSearch.PlaceholderText = "Search Course";
+            studentSearch.Size = new Size(592, 22);
+            studentSearch.TabIndex = 0;
+            studentSearch.TextChanged += studentSearch_TextChanged;
             // 
             // schedulePanel
             // 
-            this.schedulePanel.Location = new System.Drawing.Point(168, 97);
-            this.schedulePanel.Name = "schedulePanel";
-            this.schedulePanel.Size = new System.Drawing.Size(671, 491);
-            this.schedulePanel.TabIndex = 4;
+            schedulePanel.Location = new Point(168, 97);
+            schedulePanel.Name = "schedulePanel";
+            schedulePanel.Size = new Size(671, 491);
+            schedulePanel.TabIndex = 4;
             // 
             // p1
             // 
-            this.p1.BackColor = System.Drawing.Color.Firebrick;
-            this.p1.Controls.Add(this.label2);
-            this.p1.Location = new System.Drawing.Point(169, 15);
-            this.p1.Name = "p1";
-            this.p1.Size = new System.Drawing.Size(670, 76);
-            this.p1.TabIndex = 12;
+            p1.BackColor = Color.Firebrick;
+            p1.Controls.Add(label2);
+            p1.Location = new Point(169, 15);
+            p1.Name = "p1";
+            p1.Size = new Size(670, 76);
+            p1.TabIndex = 12;
             // 
             // label2
             // 
-            this.label2.AutoSize = true;
-            this.label2.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.label2.Font = new System.Drawing.Font("Segoe UI", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label2.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.label2.Location = new System.Drawing.Point(3, 15);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(231, 45);
-            this.label2.TabIndex = 0;
-            this.label2.Text = "Your Schedule";
+            label2.AutoSize = true;
+            label2.FlatStyle = FlatStyle.Popup;
+            label2.Font = new Font("Segoe UI", 24F, FontStyle.Bold, GraphicsUnit.Point);
+            label2.ForeColor = Color.WhiteSmoke;
+            label2.Location = new Point(3, 15);
+            label2.Name = "label2";
+            label2.Size = new Size(231, 45);
+            label2.TabIndex = 0;
+            label2.Text = "Your Schedule";
+            // 
+            // textBox1
+            // 
+            textBox1.Location = new Point(888, 366);
+            textBox1.Name = "textBox1";
+            textBox1.Size = new Size(100, 23);
+            textBox1.TabIndex = 13;
+            textBox1.TextChanged += textBox1_TextChanged;
             // 
             // StudentsForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1000, 600);
-            this.Controls.Add(this.p1);
-            this.Controls.Add(this.schedulePanel);
-            this.Controls.Add(this.searchPanel);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.closeBtn);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.p5);
-            this.Controls.Add(this.panel3);
-            this.Controls.Add(this.pictureBox1);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "StudentsForm";
-            this.Text = "StudentsForm";
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            this.closeBtn.ResumeLayout(false);
-            this.panel2.ResumeLayout(false);
-            this.panel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            this.p5.ResumeLayout(false);
-            this.p5.PerformLayout();
-            this.panel3.ResumeLayout(false);
-            this.panel4.ResumeLayout(false);
-            this.panel4.PerformLayout();
-            this.p1.ResumeLayout(false);
-            this.p1.PerformLayout();
-            this.ResumeLayout(false);
-            this.PerformLayout();
-
+            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleMode = AutoScaleMode.Font;
+            ClientSize = new Size(1000, 600);
+            Controls.Add(textBox1);
+            Controls.Add(p1);
+            Controls.Add(schedulePanel);
+            Controls.Add(searchPanel);
+            Controls.Add(button1);
+            Controls.Add(closeBtn);
+            Controls.Add(button2);
+            Controls.Add(p5);
+            Controls.Add(panel3);
+            Controls.Add(pictureBox1);
+            FormBorderStyle = FormBorderStyle.None;
+            Name = "StudentsForm";
+            Text = "StudentsForm";
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
+            closeBtn.ResumeLayout(false);
+            panel2.ResumeLayout(false);
+            panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            p5.ResumeLayout(false);
+            p5.PerformLayout();
+            panel3.ResumeLayout(false);
+            panel4.ResumeLayout(false);
+            panel4.PerformLayout();
+            p1.ResumeLayout(false);
+            p1.PerformLayout();
+            ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
@@ -365,5 +374,6 @@
         private Label label2;
         private Button removeCourseFromSched;
         private Button enrollBtn;
+        private TextBox textBox1;
     }
 }

@@ -16,7 +16,7 @@ namespace SchedulerUI
     public partial class RegisterForm : Form
     {
 
-        MySqlConnection con = new MySqlConnection("server=localhost;uid=root;pwd=Bisness2018!;database=scheduler_users");
+        MySqlConnection con = new MySqlConnection("server=localhost;uid=root;pwd=EDCC-WWU-WSU-Underhill;database=scheduler_users");
         MySqlCommand cmd = new MySqlCommand();
 
         public RegisterForm()

@@ -10,7 +10,7 @@ namespace Scheduler
     public class User
     {
 
-        string con = "server=localhost;uid=root;pwd=Bisness2018!;database=scheduler_users";
+        string con = "server=localhost;uid=root;pwd=EDCC-WWU-WSU-Underhill;database=scheduler_users";
 
         public string EmailAddress { get; set; }
         public string Password { get; set; }

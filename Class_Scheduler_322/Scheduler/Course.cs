@@ -11,7 +11,7 @@ namespace Scheduler
 {
     public class Course
     {
-        string con = ("server=localhost;uid=root;pwd=Bisness2018!;database=scheduler_users");
+        string con = ("server=localhost;uid=root;pwd=EDCC-WWU-WSU-Underhill;database=scheduler_users");
 
         public string Name { get; set; }
         public string Instructor { get; set; }
@@ -250,55 +250,65 @@ namespace Scheduler
 
         public void SearchCourseList(List<int> courseNumbers)
         {
-            using (MySqlConnection connection = new MySqlConnection(con))
-            {
-                connection.Open();
-
-                StringBuilder queryBuilder = new StringBuilder("SELECT * FROM courses WHERE course_number IN (");
-                for (int i = 0; i < courseNumbers.Count; i++)
+            //string query = "";
+            //try
+            //{
+                using (MySqlConnection connection = new MySqlConnection(con))
                 {
-                    queryBuilder.Append("@CourseNumber" + i);
-                    if (i < courseNumbers.Count - 1)
-                    {
-                        queryBuilder.Append(", ");
-                    }
-                }
-                queryBuilder.Append(")");
+                    connection.Open();
 
-                string query = queryBuilder.ToString();
-
-                using (MySqlCommand cmd = new MySqlCommand(query, connection))
-                {
+                    StringBuilder queryBuilder = new StringBuilder("SELECT * FROM courses WHERE course_number IN (");
                     for (int i = 0; i < courseNumbers.Count; i++)
                     {
-                        cmd.Parameters.AddWithValue("@CourseNumber" + i, courseNumbers[i]);
-                    }
-
-                    using (MySqlDataReader reader = cmd.ExecuteReader())
-                    {
-                        courseList.Clear();
-
-                        while (reader.Read())
+                        queryBuilder.Append("@CourseNumber" + i);
+                        if (i < courseNumbers.Count - 1)
                         {
-                            Course searchCourse = new Course
+                            queryBuilder.Append(", ");
+                        }
+                    }
+                    queryBuilder.Append(")");
+
+                    //query = queryBuilder.ToString();
+                    string query = queryBuilder.ToString();
+                    Console.WriteLine();
+                    Console.WriteLine();
+                    Console.Write(query);
+                    Console.WriteLine();
+                    Console.WriteLine();
+
+                    using (MySqlCommand cmd = new MySqlCommand(query, connection))
+                    {
+                        for (int i = 0; i < courseNumbers.Count; i++)
+                        {
+                            cmd.Parameters.AddWithValue("@CourseNumber" + i, courseNumbers[i]);
+                        }
+                        using (MySqlDataReader reader = cmd.ExecuteReader())
+                        {
+                            courseList.Clear();
+
+                            while (reader.Read())
                             {
-                                CourseNumber = Convert.ToInt32(reader["course_number"]),
-                                Name = reader["course_name"].ToString(),
-                                Section = reader["course_section"].ToString(),
-                                Instructor = reader["course_instructor"].ToString(),
-                                Seating = Convert.ToInt32(reader["course_seats"]),
-                                StartTime = TimeOnly.Parse(reader["start_time"].ToString()),
-                                EndTime = TimeOnly.Parse(reader["end_time"].ToString()),
-                                MeetingDays = reader["meeting_days"].ToString()
-                            };
-                            courseList.Add(searchCourse);
+                                Course searchCourse = new Course
+                                {
+                                    CourseNumber = Convert.ToInt32(reader["course_number"]),
+                                    Name = reader["course_name"].ToString(),
+                                    Section = reader["course_section"].ToString(),
+                                    Instructor = reader["course_instructor"].ToString(),
+                                    Seating = Convert.ToInt32(reader["course_seats"]),
+                                    StartTime = TimeOnly.Parse(reader["start_time"].ToString()),
+                                    EndTime = TimeOnly.Parse(reader["end_time"].ToString()),
+                                    MeetingDays = reader["meeting_days"].ToString()
+                                };
+                                courseList.Add(searchCourse);
+                            }
                         }
                     }
                 }
-            }
+            //}
+            //catch (Exception ex)
+            //{
+            //    Console.WriteLine($"Error creating course: {ex.Message}, Query: {query}");
+            //}
         }
-
-
-
     }
 }

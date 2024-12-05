@@ -87,3 +87,26 @@ C:\Users\Lapua\Desktop\Final 2\2\Class_Scheduler_322\Scheduler\obj\Debug\net6.0\
 C:\Users\Lapua\Desktop\Final 2\2\Class_Scheduler_322\Scheduler\obj\Debug\net6.0\Scheduler.pdb
 C:\Users\Lapua\Desktop\Final 2\2\Class_Scheduler_322\Scheduler\obj\Debug\net6.0\Scheduler.genruntimeconfig.cache
 C:\Users\Lapua\Desktop\Final 2\2\Class_Scheduler_322\Scheduler\obj\Debug\net6.0\ref\Scheduler.dll
+C:\Temp\CS\WSU\CPT_S-322\Project\newDumbRedundBranch\322---Project---ClassScheduler\Class_Scheduler_322\Scheduler\bin\Debug\net6.0\Scheduler.exe
+C:\Temp\CS\WSU\CPT_S-322\Project\newDumbRedundBranch\322---Project---ClassScheduler\Class_Scheduler_322\Scheduler\bin\Debug\net6.0\Scheduler.deps.json
+C:\Temp\CS\WSU\CPT_S-322\Project\newDumbRedundBranch\322---Project---ClassScheduler\Class_Scheduler_322\Scheduler\bin\Debug\net6.0\Scheduler.runtimeconfig.json
+C:\Temp\CS\WSU\CPT_S-322\Project\newDumbRedundBranch\322---Project---ClassScheduler\Class_Scheduler_322\Scheduler\bin\Debug\net6.0\Scheduler.dll
+C:\Temp\CS\WSU\CPT_S-322\Project\newDumbRedundBranch\322---Project---ClassScheduler\Class_Scheduler_322\Scheduler\bin\Debug\net6.0\Scheduler.pdb
+C:\Temp\CS\WSU\CPT_S-322\Project\newDumbRedundBranch\322---Project---ClassScheduler\Class_Scheduler_322\Scheduler\bin\Debug\net6.0\Google.Protobuf.dll
+C:\Temp\CS\WSU\CPT_S-322\Project\newDumbRedundBranch\322---Project---ClassScheduler\Class_Scheduler_322\Scheduler\bin\Debug\net6.0\MySql.Data.dll
+C:\Temp\CS\WSU\CPT_S-322\Project\newDumbRedundBranch\322---Project---ClassScheduler\Class_Scheduler_322\Scheduler\bin\Debug\net6.0\System.Configuration.ConfigurationManager.dll
+C:\Temp\CS\WSU\CPT_S-322\Project\newDumbRedundBranch\322---Project---ClassScheduler\Class_Scheduler_322\Scheduler\bin\Debug\net6.0\System.Security.Cryptography.ProtectedData.dll
+C:\Temp\CS\WSU\CPT_S-322\Project\newDumbRedundBranch\322---Project---ClassScheduler\Class_Scheduler_322\Scheduler\bin\Debug\net6.0\System.Security.Permissions.dll
+C:\Temp\CS\WSU\CPT_S-322\Project\newDumbRedundBranch\322---Project---ClassScheduler\Class_Scheduler_322\Scheduler\bin\Debug\net6.0\runtimes\win\lib\netstandard2.0\System.Security.Cryptography.ProtectedData.dll
+C:\Temp\CS\WSU\CPT_S-322\Project\newDumbRedundBranch\322---Project---ClassScheduler\Class_Scheduler_322\Scheduler\obj\Debug\net6.0\Scheduler.csproj.AssemblyReference.cache
+C:\Temp\CS\WSU\CPT_S-322\Project\newDumbRedundBranch\322---Project---ClassScheduler\Class_Scheduler_322\Scheduler\obj\Debug\net6.0\Scheduler.GeneratedMSBuildEditorConfig.editorconfig
+C:\Temp\CS\WSU\CPT_S-322\Project\newDumbRedundBranch\322---Project---ClassScheduler\Class_Scheduler_322\Scheduler\obj\Debug\net6.0\Scheduler.AssemblyInfoInputs.cache
+C:\Temp\CS\WSU\CPT_S-322\Project\newDumbRedundBranch\322---Project---ClassScheduler\Class_Scheduler_322\Scheduler\obj\Debug\net6.0\Scheduler.AssemblyInfo.cs
+C:\Temp\CS\WSU\CPT_S-322\Project\newDumbRedundBranch\322---Project---ClassScheduler\Class_Scheduler_322\Scheduler\obj\Debug\net6.0\Scheduler.csproj.CoreCompileInputs.cache
+C:\Temp\CS\WSU\CPT_S-322\Project\newDumbRedundBranch\322---Project---ClassScheduler\Class_Scheduler_322\Scheduler\obj\Debug\net6.0\Scheduler.sourcelink.json
+C:\Temp\CS\WSU\CPT_S-322\Project\newDumbRedundBranch\322---Project---ClassScheduler\Class_Scheduler_322\Scheduler\obj\Debug\net6.0\Scheduler.csproj.Up2Date
+C:\Temp\CS\WSU\CPT_S-322\Project\newDumbRedundBranch\322---Project---ClassScheduler\Class_Scheduler_322\Scheduler\obj\Debug\net6.0\Scheduler.dll
+C:\Temp\CS\WSU\CPT_S-322\Project\newDumbRedundBranch\322---Project---ClassScheduler\Class_Scheduler_322\Scheduler\obj\Debug\net6.0\refint\Scheduler.dll
+C:\Temp\CS\WSU\CPT_S-322\Project\newDumbRedundBranch\322---Project---ClassScheduler\Class_Scheduler_322\Scheduler\obj\Debug\net6.0\Scheduler.pdb
+C:\Temp\CS\WSU\CPT_S-322\Project\newDumbRedundBranch\322---Project---ClassScheduler\Class_Scheduler_322\Scheduler\obj\Debug\net6.0\Scheduler.genruntimeconfig.cache
+C:\Temp\CS\WSU\CPT_S-322\Project\newDumbRedundBranch\322---Project---ClassScheduler\Class_Scheduler_322\Scheduler\obj\Debug\net6.0\ref\Scheduler.dll
