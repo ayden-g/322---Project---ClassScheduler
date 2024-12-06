@@ -9,9 +9,6 @@ namespace Scheduler
 {
     public class User
     {
-
-        string con = "server=localhost;uid=root;pwd=EDCC-WWU-WSU-Underhill;database=scheduler_users";
-
         public string EmailAddress { get; set; }
         public string Password { get; set; }
         public string UserType { get; set; }
@@ -54,7 +51,7 @@ namespace Scheduler
 
         public void searchFaculty(string userType)
         {
-            using (MySqlConnection connection = new MySqlConnection(con))
+            using (MySqlConnection connection = new MySqlConnection(Scheduler.Connection.DB_STRING))
             {
                 connection.Open();
 

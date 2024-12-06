@@ -3,8 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Xml.Linq;
+using Google.Protobuf.WellKnownTypes;
 using MySql.Data;
 using MySql.Data.MySqlClient;
+using static System.Collections.Specialized.BitVector32;
 
 namespace Scheduler
 {
@@ -15,70 +18,68 @@ namespace Scheduler
         public string LastName { get; set; }
         public string Email { get; set; }
 
-        string con = "server=localhost;uid=root;pwd=EDCC-WWU-WSU-Underhill;database=scheduler_users";
 
-
-        public Student()
+        public Student(string email)
         {
-
+            InitStudentByEmail(email);
         }
 
-        public void EnrollCourse(int studentID, int courseNumber)
+        public string EnrollCourse(int studentID, int courseNumber)
         {
-            //MySqlConnection connection = new MySqlConnection(con);
-            //connection.Open();
-            //string query = "INSERT INTO enrolled_courses (student_id, course_id) VALUES (@StudentId, @CourseNumber)";
-
-            //using (MySqlCommand command = new MySqlCommand(query, connection))
-            //{
-            //    command.Parameters.AddWithValue("@StudentId", studentID);
-            //    command.Parameters.AddWithValue("@CourseNumber", courseNumber);
-            //}
-
             try
             {
-                using (MySqlConnection connection = new MySqlConnection(con))
+                using (MySqlConnection connection = new MySqlConnection(Scheduler.Connection.DB_STRING))
                 {
                     connection.Open();
 
-                    if (NumberOfSeatsAvailable(connection, courseNumber) > 0)
+                    // If the student isnt already enrolled to the course.
+                    if (!GetEnrolledCourses(studentID).Contains(courseNumber))
                     {
-                        // Enroll student in course
-                        string query = "INSERT INTO enrolled_courses (student_id, course_id) VALUES (@StudentId, @CourseNumber)";
-                        using (MySqlCommand command = new MySqlCommand(query, connection))
+                        // If the course has avaible seats.
+                        if (NumberOfSeatsAvailable(connection, courseNumber) > 0)
                         {
-                            command.Parameters.AddWithValue("@StudentId", studentID);
-                            command.Parameters.AddWithValue("@CourseNumber", courseNumber);
-
-                            int rowsAffected = command.ExecuteNonQuery();
-                            if (rowsAffected > 0)
+                            // If the course doesn't conflict with other enrolled courses.
+                            string isConflicting = FindConfliction(courseNumber);
+                            if (isConflicting == String.Empty)
                             {
-                                Console.WriteLine("Student successfully enrolled into the course");
+                                // Enroll student in course
+                                string query = "INSERT INTO enrolled_courses (student_id, course_id) VALUES (@StudentId, @CourseNumber)";
+                                using (MySqlCommand command = new MySqlCommand(query, connection))
+                                {
+                                    command.Parameters.AddWithValue("@StudentId", studentID);
+                                    command.Parameters.AddWithValue("@CourseNumber", courseNumber);
+                                    command.ExecuteNonQuery();
 
-                                // Update seating
-                                UpdateSeating(connection, courseNumber);
+                                    UpdateSeating(connection, courseNumber, -1);
+                                }
                             }
                             else
                             {
-                                Console.WriteLine("Failed to enroll");
+                                return "This course conflicts with your schedule!\n\nConflicting with course: " + isConflicting;
                             }
                         }
+                        else
+                        {
+                            return "The course is full!";
+                        }
                     }
-                    else
+                    else 
                     {
-                        Console.WriteLine("No available seats to enroll");
+                        return "You are already enrolled for the course!";
                     }
                 }
             }
             catch (Exception ex)
             {
-                Console.WriteLine($"Error Enrolling in course: {ex.Message}");
+                return $"Error Enrolling in course: {ex.Message}";
             }
+
+            return String.Empty;
         }
 
         public void UnenrollCourse(int studentID, int courseID)
         {
-            using (MySqlConnection connection = new MySqlConnection(con))
+            using (MySqlConnection connection = new MySqlConnection(Scheduler.Connection.DB_STRING))
             {
                 connection.Open();
 
@@ -90,16 +91,17 @@ namespace Scheduler
                     command.Parameters.AddWithValue("@CourseId", courseID);
 
                     int rowsAffected = command.ExecuteNonQuery();
-
+                    if(rowsAffected > 0)
+                    {
+                        UpdateSeating(connection, courseID, 1);
+                    }
                 }
             }
         }
 
-        public Student SearchStudentByEmail(string email)
+        private void InitStudentByEmail(string email)
         {
-            Student student = new Student();
-
-            MySqlConnection connection = new MySqlConnection(con);
+            MySqlConnection connection = new MySqlConnection(Scheduler.Connection.DB_STRING);
             connection.Open();
 
             string query = "SELECT * FROM students WHERE e_mail = @Email;";
@@ -113,16 +115,14 @@ namespace Scheduler
                     {
                         while (reader.Read())
                         {
-                            student.Id = reader.GetInt32("student_id");
-                            student.FirstName = reader.GetString("first_name");
-                            student.LastName = reader.GetString("last_name");
-                            student.Email = reader.GetString("e_mail");
+                            Id = reader.GetInt32("student_id");
+                            FirstName = reader.GetString("first_name");
+                            LastName = reader.GetString("last_name");
+                            Email = reader.GetString("e_mail");
                         }
                     }
                 }
             }
-
-            return student;
         }
 
         private int NumberOfSeatsAvailable(MySqlConnection con, int courseNumber)
@@ -137,37 +137,107 @@ namespace Scheduler
                 var res = command.ExecuteScalar();
                 if (res != DBNull.Value)
                     seatsAvailable = Convert.ToInt32(res);
-                else
-                    Console.WriteLine("Failed to find seating for class");
             }
 
             return seatsAvailable;
         }
 
-        private void UpdateSeating(MySqlConnection con, int courseNumber)
+        private void UpdateSeating(MySqlConnection con, int courseNumber, int seatAdjustment)
         {
-            string query = "UPDATE courses SET course_seats = course_seats - 1 WHERE course_number = @CourseNumber;";
+            string query = "UPDATE courses SET course_seats = course_seats + @SeatAdjustment WHERE course_number = @CourseNumber;";
             using (MySqlCommand command = new MySqlCommand(query, con))
             {
                 command.Parameters.AddWithValue("@CourseNumber", courseNumber);
+                command.Parameters.AddWithValue("@SeatAdjustment", seatAdjustment);
+                command.ExecuteNonQuery();
+            }
+        }
 
-                int rowsAffected = command.ExecuteNonQuery();
-                if (rowsAffected > 0)
+        // Gets the first enrolled course that conflicts with the given course.
+        private string FindConfliction(int newCourse)
+        {
+            List<int> courseIds = GetEnrolledCourses(Id);
+
+            // Fetch details for the new course.
+            (TimeOnly newStartTime, TimeOnly newEndTime, string newMeetingDays, string newname, string newcourseNumber, string newsection) = GetCourseDetails(newCourse);
+
+            // Compare the new course with each enrolled course.
+            foreach (int courseId in courseIds)
+            {
+                (TimeOnly startTime, TimeOnly endTime, string meetingDays, string name, string courseNumber, string section) = GetCourseDetails(courseId);
+
+                if (IsSameDay(newMeetingDays, meetingDays) && IsSameTime(newStartTime, startTime, newEndTime, endTime))
                 {
-                    Console.WriteLine("Course seating adjusted");
-                }
-                else
-                {
-                    Console.WriteLine("Failed to update seating");
+                    return $"{name} ({courseNumber}), Section {section}";
                 }
             }
+
+            return string.Empty;
+        }
+
+        // Helper method to get course details by courseId.
+        private (TimeOnly StartTime, TimeOnly EndTime, string MeetingDays, string Name, string CourseNumber, string Section) GetCourseDetails(int courseId)
+        {
+            using (MySqlConnection connection = new MySqlConnection(Scheduler.Connection.DB_STRING))
+            {
+                connection.Open();
+                string query = "SELECT * FROM courses WHERE course_number = @CourseId;";
+
+                using (MySqlCommand command = new MySqlCommand(query, connection))
+                {
+                    command.Parameters.AddWithValue("@CourseId", courseId);
+                    using (MySqlDataReader reader = command.ExecuteReader())
+                    {
+                        if (reader.Read())
+                        {
+                            TimeOnly startTime = TimeOnly.Parse(reader["start_time"].ToString());
+                            TimeOnly endTime = TimeOnly.Parse(reader["end_time"].ToString());
+                            string meetingDays = reader["meeting_days"].ToString();
+                            string name = reader["course_name"].ToString();
+                            string courseNumber = reader["course_number"].ToString();
+                            string section = reader["course_section"].ToString();
+
+                            return (startTime, endTime, meetingDays, name, courseNumber, section);
+                        }
+                        else
+                        {
+                            throw new Exception("Course not found.");
+                        }
+                    }
+                }
+            }
+        }
+
+        private bool IsSameDay(string newDays, string days)
+        {
+            List<string> newDaysList = newDays.Split(", ").ToList();
+            List<string> daysList = days.Split(", ").ToList();
+
+            foreach (string day in newDaysList)
+            {
+                if (daysList.Contains(day))
+                {
+                    return true;
+                }
+            }
+
+            return false;
+        }
+
+        private bool IsSameTime(TimeOnly newStart, TimeOnly start, TimeOnly newEnd, TimeOnly end)
+        {
+            //bool isNewStartConflict = newStart < end && newEnd > start;
+            //bool isNewEndConflict = start > newEnd && end < newStart;
+
+            //return isNewStartConflict || isNewEndConflict;
+            return newStart < end && newEnd > start;
         }
 
         public List<int> GetEnrolledCourses(int studentId)
         {
             List<int> courseIds = new List<int>();
 
-            using (MySqlConnection connection = new MySqlConnection(con))
+            using (MySqlConnection connection = new MySqlConnection(Scheduler.Connection.DB_STRING))
             {
                 connection.Open();
 
@@ -189,6 +259,5 @@ namespace Scheduler
 
             return courseIds;
         }
-
     }
 }

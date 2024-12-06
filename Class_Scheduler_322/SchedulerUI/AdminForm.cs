@@ -72,7 +72,7 @@ namespace SchedulerUI
         {
             displayPanel.Controls.Clear();
             UserControl result = new UserControl();
-            result.UserObjectType("student");
+            result.UserObjectType("Student");
             LoadResults_Faculty();
             displayPanel.Height = displayPanel.Controls.Count * result.Height;
             User.userList.Clear();

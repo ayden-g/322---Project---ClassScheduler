@@ -9,14 +9,11 @@ namespace Scheduler
 {
     public class Admin
     {
-
-        string con = ("server=localhost;uid=root;pwd=EDCC-WWU-WSU-Underhill;database=scheduler_users");
-
         public void DeleteAccount(string email)
         {
             try
             {
-                using (MySqlConnection connection = new MySqlConnection(con))
+                using (MySqlConnection connection = new MySqlConnection(Scheduler.Connection.DB_STRING))
                 {
                     connection.Open();
 
@@ -38,7 +35,7 @@ namespace Scheduler
         {
             try
             {
-                using (MySqlConnection connection = new MySqlConnection(con))
+                using (MySqlConnection connection = new MySqlConnection(Scheduler.Connection.DB_STRING))
                 {
                     connection.Open();
 

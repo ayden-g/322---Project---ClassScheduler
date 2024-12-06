@@ -50,7 +50,6 @@
             schedulePanel = new Panel();
             p1 = new Panel();
             label2 = new Label();
-            textBox1 = new TextBox();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             closeBtn.SuspendLayout();
             panel2.SuspendLayout();
@@ -309,20 +308,11 @@
             label2.TabIndex = 0;
             label2.Text = "Your Schedule";
             // 
-            // textBox1
-            // 
-            textBox1.Location = new Point(888, 366);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(100, 23);
-            textBox1.TabIndex = 13;
-            textBox1.TextChanged += textBox1_TextChanged;
-            // 
             // StudentsForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1000, 600);
-            Controls.Add(textBox1);
             Controls.Add(p1);
             Controls.Add(schedulePanel);
             Controls.Add(searchPanel);
@@ -374,6 +364,5 @@
         private Label label2;
         private Button removeCourseFromSched;
         private Button enrollBtn;
-        private TextBox textBox1;
     }
 }

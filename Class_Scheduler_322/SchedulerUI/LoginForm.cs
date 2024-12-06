@@ -9,13 +9,14 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using MySql.Data;
 using MySql.Data.MySqlClient;
+using Scheduler;
 using StudentDash;
 
 namespace SchedulerUI
 {
     public partial class LoginForm : Form
     {
-        MySqlConnection con = new MySqlConnection("server=localhost;uid=root;pwd=EDCC-WWU-WSU-Underhill;database=scheduler_users");
+        MySqlConnection con = new MySqlConnection(Scheduler.Connection.DB_STRING);
         MySqlCommand cmd = new MySqlCommand();
         private string userID;
         private bool validUser = false;
