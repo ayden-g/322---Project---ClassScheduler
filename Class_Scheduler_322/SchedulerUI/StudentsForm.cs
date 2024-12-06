@@ -18,7 +18,6 @@ namespace SchedulerUI
         private bool studentCatalog = false;
         private bool studentSched = false;
 
-
         public StudentsForm(string userID)
         {
             InitializeComponent();
@@ -27,6 +26,7 @@ namespace SchedulerUI
             p5.Hide();
             schedulePanel.Hide();
         }
+
         private void LoadResults()
         {
             foreach (Course course in Course.courseList)
@@ -41,38 +41,12 @@ namespace SchedulerUI
         {
             if (!studentCatalog)
             {
-                searchPanel.Controls.Clear();
-                studentCatalogBtn.Text = "Search";
-
-                panel3.Hide();
-                button3.Hide();
-                studentSearch.Text = String.Empty;
-
-                label1.Show();
-                p5.Show();
-
-                SearchObject result = new SearchObject();
-                result.CourseObjectName("");
-                LoadResults();
-                searchPanel.Height = searchPanel.Controls.Count * result.Height;
-
-                studentCatalog = true;
+                disableSchedule();
+                enableCatalog();
             }
             else
             {
-
-                studentCatalogBtn.Text = "Catalog";
-
-                p5.Hide();
-                button3.Show();
-                panel3.Show();
-
-
-
-                searchPanel.Controls.Clear();
-                searchPanel.Height = 0;
-
-                studentCatalog = false;
+                disableCatalog();
             }
         }
 
@@ -100,6 +74,8 @@ namespace SchedulerUI
             else
             {
                 searchPanel.Height = 0;
+                searchPanel.Controls.Clear();
+
             }
         }
 
@@ -107,33 +83,12 @@ namespace SchedulerUI
         {
             if (!studentSched)
             {
-                panel3.Hide();
-                button3.Hide();
-                p5.Hide();
-                p1.Show();
-                schedulePanel.Show();
-                addCourseToSched.Show();
-                removeCourseFromSched.Show();
-                studentSched = true;
+                disableCatalog();
+                enableSchedule();
             }
             else
             {
-                panel3.Show();
-                button3.Show();
-                panel3.Show();
-                p1.Hide();
-                schedulePanel.Hide();
-                studentSched = false;
-
-            }
-        }
-
-        private void addCourseToSched_Click(object sender, EventArgs e)
-        {
-            if (SearchObject.clicked = true)
-            {
-                int targetNumber = SearchObject.courNum;
-
+                disableSchedule();
             }
         }
 
@@ -142,11 +97,113 @@ namespace SchedulerUI
             if (SearchObject.clicked = true)
             {
                 int targetNumber = SearchObject.courNum;
-                Student student = new Student();
-                student.SearchStudentByEmail(txtUser.Text);
-                Student enrollStudent = student;
-                enrollStudent.EnrollStudent(enrollStudent.Id, targetNumber);
+                Student student = new Student(txtUser.Text);
+                string message = student.EnrollCourse(student.Id, targetNumber);
+
+                if (message.Equals(String.Empty))
+                { 
+                    refreshCatalog();
+                }
+                else
+                { 
+                    MessageBox.Show(message, "Input Error", MessageBoxButtons.OK, MessageBoxIcon.Warning); 
+                }
+
             }
+        }
+
+        private void removeCourseFromSched_Click(object sender, EventArgs e)
+        {
+            Student student = new Student(txtUser.Text);
+            int targetCourse = SearchObject.courNum;
+            student.UnenrollCourse(student.Id, targetCourse);
+
+            refreshSchedule();
+        }
+
+        private void enableCatalog()
+        {
+            searchPanel.Controls.Clear();
+            studentCatalogBtn.Text = "Search";
+
+            panel3.Hide();
+            button3.Hide();
+            studentSearch.Text = String.Empty;
+
+            label1.Show();
+            p5.Show();
+
+            SearchObject result = new SearchObject();
+            result.CourseObjectName("");
+            LoadResults();
+            searchPanel.Height = searchPanel.Controls.Count * result.Height;
+
+            studentCatalog = true;
+        }
+
+        private void enableSchedule()
+        {
+            Student student = new Student(txtUser.Text);
+            List<int> courseIds = student.GetEnrolledCourses(student.Id);
+
+            studentScheduleBtn.Text = "Back";
+            panel3.Hide();
+            button3.Hide();
+            p5.Hide();
+            p1.Show();
+            removeCourseFromSched.Show();
+            studentSched = true;
+
+            if (courseIds.Count() > 0)
+            {
+                SearchObject result = new SearchObject();
+                result.CourseObjectId(courseIds);
+                LoadResults();
+
+                searchPanel.Height = searchPanel.Controls.Count * result.Height + 10;
+            }
+            else
+            {
+                MessageBox.Show("You aren't enrolled in any courses", "Empty Schedule", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+        }
+
+        private void disableCatalog()
+        {
+            studentCatalogBtn.Text = "Catalog";
+
+            p5.Hide();
+            button3.Show();
+            panel3.Show();
+
+            searchPanel.Controls.Clear();
+            searchPanel.Height = 0;
+
+            studentCatalog = false;
+        }
+
+        private void disableSchedule()
+        {
+            studentScheduleBtn.Text = "Your Schedule";
+            panel3.Show();
+            button3.Show();
+            panel3.Show();
+            p1.Hide();
+            schedulePanel.Hide();
+            studentSched = false;
+            searchPanel.Controls.Clear();
+        }
+
+        private void refreshCatalog()
+        {
+            disableCatalog();
+            enableCatalog();
+        }
+
+        private void refreshSchedule()
+        {
+            disableSchedule();
+            enableSchedule();
         }
     }
 }

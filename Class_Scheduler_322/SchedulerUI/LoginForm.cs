@@ -9,13 +9,14 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using MySql.Data;
 using MySql.Data.MySqlClient;
+using Scheduler;
 using StudentDash;
 
 namespace SchedulerUI
 {
     public partial class LoginForm : Form
     {
-        MySqlConnection con = new MySqlConnection("server=localhost;uid=root;pwd=Bisness2018!;database=scheduler_users");
+        MySqlConnection con = new MySqlConnection(Scheduler.Connection.DB_STRING);
         MySqlCommand cmd = new MySqlCommand();
         private string userID;
         private bool validUser = false;
@@ -38,7 +39,7 @@ namespace SchedulerUI
                 return;
             }
 
-            string query = "SELECT * FROM users WHERE email_adress = @Email AND acc_password = @Password";
+            string query = "SELECT * FROM users WHERE email_address = @Email AND acc_password = @Password";
             string queryStudents = "SELECT * FROM students WHERE e_mail = @Email AND student_id = @Password";
 
 
@@ -95,6 +96,11 @@ namespace SchedulerUI
         {
 
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }
 /*
@@ -105,7 +111,7 @@ using (MySqlCommand fetchCmd = new MySqlCommand(fetchQuery, con))
         string userData = "Users in Database:\n";
         while (fetchReader.Read())
         {
-            string email = fetchReader["email_adress"].ToString();
+            string email = fetchReader["email_address"].ToString();
             string password = fetchReader["acc_password"].ToString();
             userData += $"Email: {email}, Password: {password}\n";
         }

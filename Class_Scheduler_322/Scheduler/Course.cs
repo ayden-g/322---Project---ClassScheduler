@@ -11,8 +11,6 @@ namespace Scheduler
 {
     public class Course
     {
-        string con = ("server=localhost;uid=root;pwd=Bisness2018!;database=scheduler_users");
-
         public string Name { get; set; }
         public string Instructor { get; set; }
         public int Seating { get; set; }
@@ -26,7 +24,7 @@ namespace Scheduler
 
         public void searchCourse(string course)
         {
-            using (MySqlConnection connection = new MySqlConnection(con))
+            using (MySqlConnection connection = new MySqlConnection(Scheduler.Connection.DB_STRING))
             {
                 connection.Open();
 
@@ -62,7 +60,7 @@ namespace Scheduler
 
         public void searchCourseByInstructor(string course)
         {
-            using (MySqlConnection connection = new MySqlConnection(con))
+            using (MySqlConnection connection = new MySqlConnection(Scheduler.Connection.DB_STRING))
             {
                 connection.Open();
 
@@ -96,11 +94,47 @@ namespace Scheduler
             }
         }
 
+        public void searchCourseByCourseNumber(int courseNumber)
+        {
+            using (MySqlConnection connection = new MySqlConnection(Scheduler.Connection.DB_STRING))
+            {
+                connection.Open();
+
+                string query = "SELECT * FROM courses WHERE course_number = @CourseNumber";
+
+                using (MySqlCommand cmd = new MySqlCommand(query, connection))
+                {
+                    cmd.Parameters.AddWithValue("@CourseNumber", courseNumber);
+
+                    using (MySqlDataReader reader = cmd.ExecuteReader())
+                    {
+                        courseList.Clear();
+
+                        while (reader.Read())
+                        {
+                            Course searchCourse = new Course
+                            {
+                                CourseNumber = Convert.ToInt32(reader["course_number"]),
+                                Name = reader["course_name"].ToString(),
+                                Section = reader["course_section"].ToString(),
+                                Instructor = reader["course_instructor"].ToString(),
+                                Seating = Convert.ToInt32(reader["course_seats"]),
+                                StartTime = TimeOnly.Parse(reader["start_time"].ToString()),
+                                EndTime = TimeOnly.Parse(reader["end_time"].ToString()),
+                                MeetingDays = reader["meeting_days"].ToString()
+                            };
+                            courseList.Add(searchCourse);
+                        }
+                    }
+                }
+            }
+        }
+
         public void CreateCourse(Course course)
         {
             try
             {
-                using (MySqlConnection connection = new MySqlConnection(con))
+                using (MySqlConnection connection = new MySqlConnection(Scheduler.Connection.DB_STRING))
                 {
                     connection.Open();
                     string query = "INSERT INTO courses (course_number, course_name, course_section, course_instructor, course_seats, start_time, end_time, meeting_days) VALUES (@Number, @Name, @Section, @Instructor, @Seating, @StartTime, @EndTime, @MeetingDays)";
@@ -130,7 +164,7 @@ namespace Scheduler
         {
             Course course = new Course();
 
-            using (MySqlConnection connection = new MySqlConnection(con))
+            using (MySqlConnection connection = new MySqlConnection(Scheduler.Connection.DB_STRING))
             {
                 connection.Open();
                 string sql = "SELECT * FROM courses WHERE course_number = @Number";
@@ -164,7 +198,7 @@ namespace Scheduler
         {
             try
             {
-                using (MySqlConnection connection = new MySqlConnection(con))
+                using (MySqlConnection connection = new MySqlConnection(Scheduler.Connection.DB_STRING))
                 {
                     connection.Open();
                     string query = "UPDATE courses SET course_name = @Name, course_section = @Section, course_seats = @Seating, start_time = @StartTime, end_time = @EndTime, meeting_days = @MeetingDays WHERE course_number = @Number";
@@ -194,7 +228,7 @@ namespace Scheduler
         {
             try
             {
-                using (MySqlConnection connection = new MySqlConnection(con))
+                using (MySqlConnection connection = new MySqlConnection(Scheduler.Connection.DB_STRING))
                 {
                     connection.Open();
                     string query = "DELETE FROM courses WHERE course_number = @CourseNumber";
@@ -202,26 +236,58 @@ namespace Scheduler
                     using (MySqlCommand cmd = new MySqlCommand(query, connection))
                     {
                         cmd.Parameters.AddWithValue("@CourseNumber", courseNumber);
-                        int rowsAffected = cmd.ExecuteNonQuery();
+                        cmd.ExecuteNonQuery();
 
-                        if (rowsAffected > 0)
-                        {
-                            Console.WriteLine("Course deleted successfully.");
-                        }
-                        else
-                        {
-                            Console.WriteLine("No course found with the provided course number.");
-                        }
                     }
                 }
             }
             catch (Exception ex)
             {
-                Console.WriteLine($"Error deleting course: {ex.Message}");
             }
         }
 
+        public void SearchCourseList(List<int> courseNumbers)
+        {
+            using (MySqlConnection connection = new MySqlConnection(Scheduler.Connection.DB_STRING))
+            {
+                connection.Open();
 
+                if (courseNumbers.Count == 0)
+                {
+                    return;
+                }
 
+                string query = "SELECT * FROM courses WHERE course_number IN (" + string.Join(",", courseNumbers.Select((_, i) => "@CourseNumber" + i)) + ")";
+
+                using (MySqlCommand cmd = new MySqlCommand(query, connection))
+                {
+                    for (int i = 0; i < courseNumbers.Count; i++)
+                    {
+                        cmd.Parameters.AddWithValue("@CourseNumber" + i, courseNumbers[i]);
+                    }
+
+                    using (MySqlDataReader reader = cmd.ExecuteReader())
+                    {
+                        courseList.Clear();
+
+                        while (reader.Read())
+                        {
+                            Course searchCourse = new Course
+                            {
+                                CourseNumber = Convert.ToInt32(reader["course_number"]),
+                                Name = reader["course_name"].ToString(),
+                                Section = reader["course_section"].ToString(),
+                                Instructor = reader["course_instructor"].ToString(),
+                                Seating = Convert.ToInt32(reader["course_seats"]),
+                                StartTime = TimeOnly.Parse(reader["start_time"].ToString()),
+                                EndTime = TimeOnly.Parse(reader["end_time"].ToString()),
+                                MeetingDays = reader["meeting_days"].ToString()
+                            };
+                            courseList.Add(searchCourse);
+                        }
+                    }
+                }
+            }
+        }
     }
 }

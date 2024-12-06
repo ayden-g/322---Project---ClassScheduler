@@ -1,3 +1,4 @@
+using MySql.Data.MySqlClient;
 using Scheduler;
 using SchedulerUI;
 using System.DirectoryServices;
@@ -25,8 +26,57 @@ namespace StudentDash
 
         private void accountBtn_Click(object sender, EventArgs e)
         {
-            new FacultyForm(txtUser.Text).Show();
-            this.Hide();
+            string userType = getUserType();
+
+            if (userType == "Faculty")
+            {
+                new FacultyForm(txtUser.Text).Show();
+                this.Hide();
+            }
+            else if (userType == "Student")
+            {
+                new StudentsForm(txtUser.Text).Show();
+                this.Hide();
+            }
+            else if (userType == "Admin")
+            {
+                new AdminForm().Show();
+                //new AdminForm(txtUser.Text).Show();
+                this.Hide();
+            }
+        }
+
+        private string getUserType()
+        {
+            string userType = string.Empty;
+            string query = "SELECT user_type FROM users WHERE email_address = @Email";
+
+            try
+            {
+                using (MySqlConnection con = new MySqlConnection(Connection.DB_STRING))
+                {
+                    con.Open();
+                    using (MySqlCommand cmd = new MySqlCommand(query, con))
+                    {
+                        cmd.Parameters.AddWithValue("@Email", txtUser.Text);
+                        object result = cmd.ExecuteScalar();
+                        if (result != null)
+                        {
+                            userType = result.ToString();
+                        }
+                    }
+                }
+            }
+            catch (MySqlException ex)
+            {
+                MessageBox.Show("MySQL Error: " + ex.Message, "Query Failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("General Error: " + ex.Message, "Query Failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+            return userType;
         }
 
         private void LoadResults()

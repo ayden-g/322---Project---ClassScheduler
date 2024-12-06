@@ -29,6 +29,36 @@ namespace StudentDash
 
         }
 
+        public void CourseObjectId(List<int> id)
+        {
+            Course course = new Course();
+            course.SearchCourseList(id);
+            lCourseNum.Text = course.CourseNumber.ToString();
+            lName.Text = course.Name;
+            lSection.Text = course.Section;
+            lInstructor.Text = course.Instructor;
+            lSeats.Text = course.Seating.ToString();
+            lStartTime.Text = course.StartTime.ToString();
+            lEndTime.Text = course.EndTime.ToString();
+            lMeetingDays.Text = course.MeetingDays;
+
+        }
+
+        public void CourseNumber(int id)
+        {
+            Course course = new Course();
+            course.searchCourseByCourseNumber(id);
+            lCourseNum.Text = course.CourseNumber.ToString();
+            lName.Text = course.Name;
+            lSection.Text = course.Section;
+            lInstructor.Text = course.Instructor;
+            lSeats.Text = course.Seating.ToString();
+            lStartTime.Text = course.StartTime.ToString();
+            lEndTime.Text = course.EndTime.ToString();
+            lMeetingDays.Text = course.MeetingDays;
+
+        }
+
         public void SearchQuery(Course course)
         {
             lCourseNum.Text = course.CourseNumber.ToString();
@@ -106,6 +136,21 @@ namespace StudentDash
 
                 courNum = 0;
             }
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void lEndTime_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lStartTime_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

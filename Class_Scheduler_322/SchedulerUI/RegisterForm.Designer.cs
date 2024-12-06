@@ -40,6 +40,7 @@
             this.label4 = new System.Windows.Forms.Label();
             this.txtUserType = new System.Windows.Forms.TextBox();
             this.registerType = new System.Windows.Forms.Label();
+            this.button2 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // backToLoginBtn
@@ -183,11 +184,28 @@
             this.registerType.TabIndex = 21;
             this.registerType.Text = "Student/Faculty/Admin";
             // 
+            // button2
+            // 
+            this.button2.BackColor = System.Drawing.Color.Firebrick;
+            this.button2.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button2.Font = new System.Drawing.Font("Segoe UI Black", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.button2.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.button2.Location = new System.Drawing.Point(238, 12);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(30, 30);
+            this.button2.TabIndex = 23;
+            this.button2.Text = "X";
+            this.button2.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
             // RegisterForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(280, 544);
+            this.Controls.Add(this.button2);
             this.Controls.Add(this.txtUserType);
             this.Controls.Add(this.registerType);
             this.Controls.Add(this.checkBox1);
@@ -223,5 +241,6 @@
         private Label label4;
         private TextBox txtUserType;
         private Label registerType;
+        private Button button2;
     }
 }
